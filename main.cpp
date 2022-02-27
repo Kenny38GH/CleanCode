@@ -1,93 +1,94 @@
-#include <iostream>
 #include "lib/ball.hpp"
+#include "lib/boid.hpp"
 #include "lib/render.hpp"
+#include <iostream>
 
-int main(int argc, char * argv[]){
+int main(int argc, char *argv[]) {
 
-	SDL_Window* window = NULL;
+  SDL_Window *window = NULL;
 
-	if( SDL_Init( SDL_INIT_VIDEO ) < 0 ){
-		printf( "SDL could not initialize! SDL_Error: %s\n", SDL_GetError() );
-	} else {
-		window = SDL_CreateWindow( "Bouncing Balls", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 500, 500, SDL_WINDOW_SHOWN|SDL_WINDOW_OPENGL);
-		if( window == NULL ){
-			printf( "Window could not be created! SDL_Error: %s\n", SDL_GetError() );
+  if (SDL_Init(SDL_INIT_VIDEO) < 0) {
+    printf("SDL could not initialize! SDL_Error: %s\n", SDL_GetError());
+  } else {
+    window = SDL_CreateWindow("BOIDS", SDL_WINDOWPOS_UNDEFINED,
+                              SDL_WINDOWPOS_UNDEFINED, 1000, 1000,
+                              SDL_WINDOW_SHOWN | SDL_WINDOW_OPENGL);
+    if (window == NULL) {
+      printf("Window could not be created! SDL_Error: %s\n", SDL_GetError());
 
-		} else {
+    } else {
 
-			SDL_GLContext glcont = SDL_GL_CreateContext(window);
-            bool quit = false;
-			Uint32 lastUpdate = SDL_GetTicks();
-            SDL_Event e;
+      SDL_GLContext glcont = SDL_GL_CreateContext(window);
+      bool quit = false;
+      Uint32 lastUpdate = SDL_GetTicks();
+      SDL_Event e;
 
-			std::list<Ball*> objects;
+      std::list<boid *> objects;
 
-            while(!quit){
+      while (!quit) {
 
-                Uint64 start = SDL_GetPerformanceCounter();
+        Uint64 start = SDL_GetPerformanceCounter();
 
-                while(SDL_PollEvent(&e) != 0){
-					switch(e.type){
-					case SDL_QUIT:
-						quit=true;
-						break;
-					case SDL_MOUSEBUTTONDOWN: {
-						int x;
-						int y;
-						SDL_GetMouseState(&x,&y);
-						std::cout << x << ", " << y << std::endl;
-						Ball* nb = new Ball(std::rand() % 40 + 20,
-											 Vector((std::rand() % 100)/100.,(std::rand() % 100)/100.,(std::rand() % 100)/100.), 
-											 Vector(x, y, 0));
-						objects.push_front(nb);
-						break;
-						}
-					default:
-						break;
-					}
-                }
+        while (SDL_PollEvent(&e) != 0) {
+          switch (e.type) {
+          case SDL_QUIT:
+            quit = true;
+            break;
+          case SDL_MOUSEBUTTONDOWN: {
+            int x, y;
+            SDL_GetMouseState(&x, &y);
+            boid *nb = new boid(glm::vec3(x,y,0));
+            objects.push_back(nb);
+            break;
+          }
+          default:
+            break;
+          }
+        }
 
-                Uint64 event = SDL_GetPerformanceCounter();
+        Uint64 event = SDL_GetPerformanceCounter();
 
-                /* PHYSIQUE LOOP */
+        /* PHYSIQUE LOOP */
 
-				Uint32 current = SDL_GetTicks();
-				float dT = (current - lastUpdate) / 1000.0f;
-				for(Ball* physc : objects){
-					//Movement update and collision check
-					physc->collision();
-					physc->update(dT);
+        Uint32 current = SDL_GetTicks();
+        Uint32 time = SDL_GetTicks();
+        float dT = (current - lastUpdate) / 1000.0f;
+        for (boid *physc : objects) {
+          // Movement update and collision check
+          // physc->collision();
+          physc->seek(glm::vec3(500 + 100 * glm::cos(time/1000.),500 + 100 * glm::sin(time/1000.),0));
+          physc->update(dT);
+        }
+        lastUpdate = current;
+        Uint64 phys = SDL_GetPerformanceCounter();
 
-				}
-				lastUpdate = current;
-                Uint64 phys = SDL_GetPerformanceCounter();
+        /* RENDERING LOOP */
 
+        initGL();
 
-                /* RENDERING LOOP */
+        glBegin(GL_POINTS);
+        glColor3f(1., 0., 0.);
+        glVertex2f(500 + 100 * glm::cos(time/1000.),500 + 100 * glm::sin(time/1000.));
+        glEnd();
 
-				initGL();
+        for (boid *rendc : objects) {
+          rendc->render();
+        }
+        SDL_GL_SwapWindow(window);
 
-				for(Ball* rendc : objects){
-					rendc->render();
-				}
-				SDL_GL_SwapWindow(window);
+        Uint64 end = SDL_GetPerformanceCounter();
+      }
 
-                Uint64 rend = SDL_GetPerformanceCounter();
-				Uint64 end  = SDL_GetPerformanceCounter();
+      // Destroy context
+      SDL_GL_DeleteContext(glcont);
+    }
+  }
 
-            }
+  // Destroy window
+  SDL_DestroyWindow(window);
 
-			//Destroy context
-			SDL_GL_DeleteContext(glcont);
-		}
-	}
+  // Quit SDL subsystems
+  SDL_Quit();
 
-
-	//Destroy window
-	SDL_DestroyWindow( window );
-
-	//Quit SDL subsystems
-	SDL_Quit();
-
-	return 0;
+  return 0;
 }
