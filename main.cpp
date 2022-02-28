@@ -1,5 +1,6 @@
-#include "lib/boid.hpp"
+#include "lib/Boid.hpp"
 #include "lib/render.hpp"
+#include "lib/Flock.hpp"
 #include <iostream>
 #include <list>
 
@@ -23,7 +24,7 @@ int main(int argc, char *argv[]) {
       Uint32 lastUpdate = SDL_GetTicks();
       SDL_Event e;
 
-      std::list<boid *> objects;
+      std::list<Boid *> objects;
 
       while (!quit) {
 
@@ -37,7 +38,7 @@ int main(int argc, char *argv[]) {
           case SDL_MOUSEBUTTONDOWN: {
             int x, y;
             SDL_GetMouseState(&x, &y);
-            boid *nb = new boid(glm::vec3(x,y,0));
+            Boid *nb = new Boid(glm::vec3(x,y,0));
             objects.push_back(nb);
             break;
           }
@@ -53,7 +54,7 @@ int main(int argc, char *argv[]) {
         Uint32 current = SDL_GetTicks();
         Uint32 time = SDL_GetTicks();
         float dT = (current - lastUpdate) / 1000.0f;
-        for (boid *physc : objects) {
+        for (Boid *physc : objects) {
           // Movement update and collision check
           // physc->collision();
           physc->seek(glm::vec3(500 + 100 * glm::cos(time/1000.),500 + 100 * glm::sin(time/1000.),0));
@@ -71,7 +72,7 @@ int main(int argc, char *argv[]) {
         glVertex2f(500 + 100 * glm::cos(time/1000.),500 + 100 * glm::sin(time/1000.));
         glEnd();
 
-        for (boid *rendc : objects) {
+        for (Boid *rendc : objects) {
           rendc->render();
         }
         SDL_GL_SwapWindow(window);

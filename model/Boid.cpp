@@ -1,6 +1,6 @@
-#include "../lib/boid.hpp"
+#include "../lib/Boid.hpp"
 
-void boid::seek(const glm::vec3 &target) {
+void Boid::seek(const glm::vec3 &target) {
   glm::vec3 desired = target - _position;
   desired = glm::normalize(desired) * MAX_SPEED;
   glm::vec3 steer = desired - _velocity;
@@ -9,7 +9,7 @@ void boid::seek(const glm::vec3 &target) {
     _acceleration += steer;
 }
 
-void boid::seek_away(const glm::vec3 &target) {
+void Boid::seek_away(const glm::vec3 &target) {
   glm::vec3 desired = target - _position;
   desired = glm::normalize(desired) * MAX_SPEED;
   glm::vec3 steer = -desired - _velocity;
@@ -18,7 +18,7 @@ void boid::seek_away(const glm::vec3 &target) {
     _acceleration += steer;
 }
 
-void boid::update(const float &dT){
+void Boid::update(const float &dT){
     // Position update
   _position.x += (_velocity.x * BASE_SPEED) * dT;
   _position.y += (_velocity.y * BASE_SPEED) * dT;
@@ -32,6 +32,6 @@ void boid::update(const float &dT){
   _acceleration = glm::vec3(0);
 }
 
-void boid::render() const {
+void Boid::render() const {
   renderTriangle(_position, _velocity, 10.f);
 }

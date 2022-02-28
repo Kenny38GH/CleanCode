@@ -11,7 +11,7 @@
 
 #define BASE_SPEED 5.0f
 
-class boid {
+class Boid {
 private:
   glm::vec3 _position;
   glm::vec3 _velocity;
@@ -21,10 +21,10 @@ private:
   float _view_angle;
 
 public:
-  boid() = default;
-  boid(glm::vec3 position)
+  Boid() = default;
+  Boid(glm::vec3 position)
       : _position(position), _velocity(glm::vec3(2.f,2.f,0.f)), _acceleration(0) {}
-  ~boid() = default;
+  ~Boid() = default;
 
   void seek(const glm::vec3 &target);
   void seek_away(const glm::vec3 &target);
