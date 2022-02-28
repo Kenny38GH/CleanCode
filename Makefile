@@ -5,7 +5,7 @@ INC =
 LIBS = -lGL -lm -lSDL2
 LIBDIR = 
 GCC = g++
-OBJECTS = obj/main.o obj/ball.o obj/vector.o obj/render.o obj/boid.o
+OBJECTS = obj/main.o obj/render.o obj/boid.o
 default: $(BIN)
 
 all: $(OBJECT)
@@ -13,13 +13,7 @@ all: $(OBJECT)
 $(BIN): $(OBJECTS)
 	$(GCC) $(OBJECTS) $(FLAGS) -o $(BIN) $(LIBDIR) $(LIBS)
 
-obj/vector.o: model/vector.cpp lib/vector.hpp
-	$(GCC) $(INC) $(FLAGS) -c $< -o $@
-
 obj/boid.o: model/boid.cpp lib/boid.hpp
-	$(GCC) $(INC) $(FLAGS) -c $< -o $@
-
-obj/ball.o: model/ball.cpp lib/ball.hpp
 	$(GCC) $(INC) $(FLAGS) -c $< -o $@
 
 obj/render.o: visu/render.cpp lib/render.hpp

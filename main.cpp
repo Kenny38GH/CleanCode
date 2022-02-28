@@ -1,7 +1,7 @@
-#include "lib/ball.hpp"
 #include "lib/boid.hpp"
 #include "lib/render.hpp"
 #include <iostream>
+#include <list>
 
 int main(int argc, char *argv[]) {
 

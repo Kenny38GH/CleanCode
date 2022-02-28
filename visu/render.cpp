@@ -11,7 +11,7 @@ void initGL() {
   glLoadIdentity();
 }
 
-void renderCircle(Vector center, Vector color, int size) {
+void renderCircle(const glm::vec3 &center, const glm::vec3 &color, const int &size) {
 
   glBegin(GL_TRIANGLE_FAN);
   glColor3f(color.x, color.y, color.z);
@@ -25,7 +25,7 @@ void renderCircle(Vector center, Vector color, int size) {
   glEnd();
 }
 
-void renderRect(Vector center, Vector color, int h, int w) {
+void renderRect(const glm::vec3 &center, const glm::vec3 &color, const int &h, const int &w) {
 
   glBegin(GL_LINE_STRIP);
   glColor3f(color.x, color.y, color.z);
@@ -36,14 +36,14 @@ void renderRect(Vector center, Vector color, int h, int w) {
   glEnd();
 }
 
-void renderTriangle(glm::vec3 center, glm::vec3 dir, float size) {
+void renderTriangle(const glm::vec3 &center, const glm::vec3 &dir, const float &size) {
 
   glm::vec3 dir_crossed = glm::normalize(glm::cross(-dir, glm::vec3(0,0,1)));
-  dir = glm::normalize(dir);
+  glm::vec3 dir_normalized = glm::normalize(dir);
 
-  glm::vec3 pt1 = center + dir * size;
-  glm::vec3 pt2 = center - dir + dir_crossed * size * 0.5f;
-  glm::vec3 pt3 = center - dir - dir_crossed * size * 0.5f; 
+  glm::vec3 pt1 = center + dir_normalized * size;
+  glm::vec3 pt2 = center - dir_normalized + dir_crossed * size * 0.5f;
+  glm::vec3 pt3 = center - dir_normalized - dir_crossed * size * 0.5f; 
 
   glBegin(GL_TRIANGLES);
   glColor3f(1, 1, 1);
