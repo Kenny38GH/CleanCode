@@ -5,7 +5,7 @@ INC =
 LIBS = -lGL -lm -lSDL2
 LIBDIR = 
 GCC = g++
-OBJECTS = obj/main.o obj/render.o obj/Boid.o obj/Flock.o
+OBJECTS = obj/main.o obj/render.o obj/boid.o
 default: $(BIN)
 
 all: $(OBJECT)
@@ -13,13 +13,10 @@ all: $(OBJECT)
 $(BIN): $(OBJECTS)
 	$(GCC) $(OBJECTS) $(FLAGS) -o $(BIN) $(LIBDIR) $(LIBS)
 
-obj/Boid.o: model/Boid.cpp lib/Boid.hpp
+obj/boid.o: model/boid.cpp lib/boid.hpp
 	$(GCC) $(INC) $(FLAGS) -c $< -o $@
 
 obj/render.o: visu/render.cpp lib/render.hpp
-	$(GCC) $(INC) $(FLAGS) -c $< -o $@
-
-obj/Flock.o: model/Flock.cpp lib/Flock.hpp
 	$(GCC) $(INC) $(FLAGS) -c $< -o $@
 
 obj/main.o: main.cpp
