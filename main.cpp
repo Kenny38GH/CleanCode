@@ -1,6 +1,5 @@
-#include "lib/Boid.hpp"
+#include "lib/boid.hpp"
 #include "lib/render.hpp"
-#include "lib/Flock.hpp"
 #include <iostream>
 #include <list>
 
@@ -79,7 +78,7 @@ int main(int argc, char *argv[]) {
 
         render_circle(point_to_seek, glm::vec3(1,0,0), 3);
 
-        for (Boid *rendc : objects) {
+        for (boid *rendc : objects) {
           rendc->render();
         }
         SDL_GL_SwapWindow(window);
