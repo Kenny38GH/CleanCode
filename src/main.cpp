@@ -1,5 +1,5 @@
-#include "lib/boid.hpp"
-#include "lib/render.hpp"
+#include "../lib/boid.hpp"
+#include "../lib/render.hpp"
 #include <iostream>
 #include <list>
 
@@ -37,7 +37,7 @@ int main(int argc, char *argv[]) {
           case SDL_MOUSEBUTTONDOWN: {
             int x, y;
             SDL_GetMouseState(&x, &y);
-            boid *nb = new boid(glm::vec3(x,y,0));
+            boid *nb = new boid(glm::vec3(x, y, 0));
             objects.push_back(nb);
             break;
           }
@@ -56,7 +56,8 @@ int main(int argc, char *argv[]) {
         for (boid *physc : objects) {
           // Movement update and collision check
           // physc->collision();
-          physc->seek(glm::vec3(500 + 100 * glm::cos(time/1000.),500 + 100 * glm::sin(time/1000.),0));
+          physc->seek(glm::vec3(500 + 100 * glm::cos(time / 1000.),
+                                500 + 100 * glm::sin(time / 1000.), 0));
           physc->update(dT);
         }
         lastUpdate = current;
@@ -68,7 +69,8 @@ int main(int argc, char *argv[]) {
 
         glBegin(GL_POINTS);
         glColor3f(1., 0., 0.);
-        glVertex2f(500 + 100 * glm::cos(time/1000.),500 + 100 * glm::sin(time/1000.));
+        glVertex2f(500 + 100 * glm::cos(time / 1000.),
+                   500 + 100 * glm::sin(time / 1000.));
         glEnd();
 
         for (boid *rendc : objects) {
