@@ -1,4 +1,4 @@
-#include "../lib/boid.hpp"
+#include "../lib/Boid.hpp"
 #include "../lib/render.hpp"
 #include <iostream>
 #include <list>
@@ -22,8 +22,9 @@ int main(int argc, char *argv[]) {
       bool quit = false;
       Uint32 lastUpdate = SDL_GetTicks();
       SDL_Event e;
+      SDL_EventType last_event;
 
-      std::list<boid *> objects;
+      std::list<Boid *> objects;
 
       while (!quit) {
 
@@ -34,16 +35,22 @@ int main(int argc, char *argv[]) {
           case SDL_QUIT:
             quit = true;
             break;
-          case SDL_MOUSEBUTTONDOWN: {
-            int x, y;
-            SDL_GetMouseState(&x, &y);
-            boid *nb = new boid(glm::vec3(x, y, 0));
-            objects.push_back(nb);
+          case SDL_MOUSEBUTTONDOWN:
+            last_event = SDL_MOUSEBUTTONDOWN;
             break;
-          }
+          case SDL_MOUSEBUTTONUP:
+            last_event = SDL_MOUSEBUTTONUP;
+            break;
           default:
             break;
           }
+        }
+
+        if (last_event == SDL_MOUSEBUTTONDOWN) {
+          int x, y;
+          SDL_GetMouseState(&x, &y);
+          Boid *nb = new Boid(glm::vec3(x, y, 0));
+          objects.push_back(nb);
         }
 
         Uint64 event = SDL_GetPerformanceCounter();
@@ -52,12 +59,16 @@ int main(int argc, char *argv[]) {
 
         Uint32 current = SDL_GetTicks();
         Uint32 time = SDL_GetTicks();
+
         float dT = (current - lastUpdate) / 1000.0f;
-        for (boid *physc : objects) {
+        glm::vec3 point_to_seek =
+            glm::vec3(glm::vec3(500 + 200 * glm::cos(time / 1000.),
+                                500 + 200 * glm::sin(time / 1000.), 0));
+
+        for (Boid *physc : objects) {
           // Movement update and collision check
           // physc->collision();
-          physc->seek(glm::vec3(500 + 100 * glm::cos(time / 1000.),
-                                500 + 100 * glm::sin(time / 1000.), 0));
+          physc->seek(point_to_seek);
           physc->update(dT);
         }
         lastUpdate = current;
@@ -65,21 +76,19 @@ int main(int argc, char *argv[]) {
 
         /* RENDERING LOOP */
 
-        initGL();
+        init_gl();
 
-        glBegin(GL_POINTS);
-        glColor3f(1., 0., 0.);
-        glVertex2f(500 + 100 * glm::cos(time / 1000.),
-                   500 + 100 * glm::sin(time / 1000.));
-        glEnd();
+        render_circle(point_to_seek, glm::vec3(1, 0, 0), 3);
 
-        for (boid *rendc : objects) {
+        for (Boid *rendc : objects) {
           rendc->render();
         }
         SDL_GL_SwapWindow(window);
 
         Uint64 end = SDL_GetPerformanceCounter();
       }
+
+      std::cout << objects.size() << std::endl;
 
       // Destroy context
       SDL_GL_DeleteContext(glcont);

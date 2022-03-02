@@ -124,32 +124,59 @@ CleanCode/fast:
 	$(MAKE) -f CMakeFiles/CleanCode.dir/build.make CMakeFiles/CleanCode.dir/build
 .PHONY : CleanCode/fast
 
-src/boid.o: src/boid.cpp.o
+src/Boid.o: src/Boid.cpp.o
 
-.PHONY : src/boid.o
+.PHONY : src/Boid.o
 
 # target to build an object file
-src/boid.cpp.o:
-	$(MAKE) -f CMakeFiles/CleanCode.dir/build.make CMakeFiles/CleanCode.dir/src/boid.cpp.o
-.PHONY : src/boid.cpp.o
+src/Boid.cpp.o:
+	$(MAKE) -f CMakeFiles/CleanCode.dir/build.make CMakeFiles/CleanCode.dir/src/Boid.cpp.o
+.PHONY : src/Boid.cpp.o
 
-src/boid.i: src/boid.cpp.i
+src/Boid.i: src/Boid.cpp.i
 
-.PHONY : src/boid.i
+.PHONY : src/Boid.i
 
 # target to preprocess a source file
-src/boid.cpp.i:
-	$(MAKE) -f CMakeFiles/CleanCode.dir/build.make CMakeFiles/CleanCode.dir/src/boid.cpp.i
-.PHONY : src/boid.cpp.i
+src/Boid.cpp.i:
+	$(MAKE) -f CMakeFiles/CleanCode.dir/build.make CMakeFiles/CleanCode.dir/src/Boid.cpp.i
+.PHONY : src/Boid.cpp.i
 
-src/boid.s: src/boid.cpp.s
+src/Boid.s: src/Boid.cpp.s
 
-.PHONY : src/boid.s
+.PHONY : src/Boid.s
 
 # target to generate assembly for a file
-src/boid.cpp.s:
-	$(MAKE) -f CMakeFiles/CleanCode.dir/build.make CMakeFiles/CleanCode.dir/src/boid.cpp.s
-.PHONY : src/boid.cpp.s
+src/Boid.cpp.s:
+	$(MAKE) -f CMakeFiles/CleanCode.dir/build.make CMakeFiles/CleanCode.dir/src/Boid.cpp.s
+.PHONY : src/Boid.cpp.s
+
+src/Flock.o: src/Flock.cpp.o
+
+.PHONY : src/Flock.o
+
+# target to build an object file
+src/Flock.cpp.o:
+	$(MAKE) -f CMakeFiles/CleanCode.dir/build.make CMakeFiles/CleanCode.dir/src/Flock.cpp.o
+.PHONY : src/Flock.cpp.o
+
+src/Flock.i: src/Flock.cpp.i
+
+.PHONY : src/Flock.i
+
+# target to preprocess a source file
+src/Flock.cpp.i:
+	$(MAKE) -f CMakeFiles/CleanCode.dir/build.make CMakeFiles/CleanCode.dir/src/Flock.cpp.i
+.PHONY : src/Flock.cpp.i
+
+src/Flock.s: src/Flock.cpp.s
+
+.PHONY : src/Flock.s
+
+# target to generate assembly for a file
+src/Flock.cpp.s:
+	$(MAKE) -f CMakeFiles/CleanCode.dir/build.make CMakeFiles/CleanCode.dir/src/Flock.cpp.s
+.PHONY : src/Flock.cpp.s
 
 src/main.o: src/main.cpp.o
 
@@ -214,9 +241,12 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... CleanCode"
-	@echo "... src/boid.o"
-	@echo "... src/boid.i"
-	@echo "... src/boid.s"
+	@echo "... src/Boid.o"
+	@echo "... src/Boid.i"
+	@echo "... src/Boid.s"
+	@echo "... src/Flock.o"
+	@echo "... src/Flock.i"
+	@echo "... src/Flock.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

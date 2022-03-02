@@ -18,13 +18,13 @@ void Boid::seek_away(const glm::vec3 &target) {
     _acceleration += steer;
 }
 
-void Boid::update(const float &dT){
-    // Position update
+void Boid::update(const float &dT) {
+  // Position update
   _position.x += (_velocity.x * BASE_SPEED) * dT;
   _position.y += (_velocity.y * BASE_SPEED) * dT;
 
   // _velocitye update
-  if(glm::length(_velocity + _acceleration) < MAX_SPEED) {
+  if (glm::length(_velocity + _acceleration) < MAX_SPEED) {
     _velocity.x += _acceleration.x * dT;
     _velocity.y += _acceleration.y * dT;
   }
@@ -32,6 +32,4 @@ void Boid::update(const float &dT){
   _acceleration = glm::vec3(0);
 }
 
-void Boid::render() const {
-  renderTriangle(_position, _velocity, 10.f);
-}
+void Boid::render() const { render_triangle(_position, _velocity, 10.f); }

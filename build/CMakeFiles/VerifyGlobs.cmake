@@ -4,7 +4,8 @@
 # MY_SOURCES at CMakeLists.txt:18 (file)
 file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "/home/valentin/Bureau/GitHub/CleanCode/src/*")
 set(OLD_GLOB
-  "/home/valentin/Bureau/GitHub/CleanCode/src/boid.cpp"
+  "/home/valentin/Bureau/GitHub/CleanCode/src/Boid.cpp"
+  "/home/valentin/Bureau/GitHub/CleanCode/src/Flock.cpp"
   "/home/valentin/Bureau/GitHub/CleanCode/src/main.cpp"
   "/home/valentin/Bureau/GitHub/CleanCode/src/render.cpp"
   )

@@ -1,7 +1,8 @@
 file(REMOVE_RECURSE
   "../bin/CleanCode"
   "../bin/CleanCode.pdb"
-  "CMakeFiles/CleanCode.dir/src/boid.cpp.o"
+  "CMakeFiles/CleanCode.dir/src/Boid.cpp.o"
+  "CMakeFiles/CleanCode.dir/src/Flock.cpp.o"
   "CMakeFiles/CleanCode.dir/src/main.cpp.o"
   "CMakeFiles/CleanCode.dir/src/render.cpp.o"
 )

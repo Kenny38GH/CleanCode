@@ -57,22 +57,35 @@ include CMakeFiles/CleanCode.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/CleanCode.dir/flags.make
 
-CMakeFiles/CleanCode.dir/src/boid.cpp.o: CMakeFiles/CleanCode.dir/flags.make
-CMakeFiles/CleanCode.dir/src/boid.cpp.o: ../src/boid.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/valentin/Bureau/GitHub/CleanCode/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/CleanCode.dir/src/boid.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/CleanCode.dir/src/boid.cpp.o -c /home/valentin/Bureau/GitHub/CleanCode/src/boid.cpp
+CMakeFiles/CleanCode.dir/src/Boid.cpp.o: CMakeFiles/CleanCode.dir/flags.make
+CMakeFiles/CleanCode.dir/src/Boid.cpp.o: ../src/Boid.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/valentin/Bureau/GitHub/CleanCode/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/CleanCode.dir/src/Boid.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/CleanCode.dir/src/Boid.cpp.o -c /home/valentin/Bureau/GitHub/CleanCode/src/Boid.cpp
 
-CMakeFiles/CleanCode.dir/src/boid.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CleanCode.dir/src/boid.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/valentin/Bureau/GitHub/CleanCode/src/boid.cpp > CMakeFiles/CleanCode.dir/src/boid.cpp.i
+CMakeFiles/CleanCode.dir/src/Boid.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CleanCode.dir/src/Boid.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/valentin/Bureau/GitHub/CleanCode/src/Boid.cpp > CMakeFiles/CleanCode.dir/src/Boid.cpp.i
 
-CMakeFiles/CleanCode.dir/src/boid.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CleanCode.dir/src/boid.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/valentin/Bureau/GitHub/CleanCode/src/boid.cpp -o CMakeFiles/CleanCode.dir/src/boid.cpp.s
+CMakeFiles/CleanCode.dir/src/Boid.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CleanCode.dir/src/Boid.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/valentin/Bureau/GitHub/CleanCode/src/Boid.cpp -o CMakeFiles/CleanCode.dir/src/Boid.cpp.s
+
+CMakeFiles/CleanCode.dir/src/Flock.cpp.o: CMakeFiles/CleanCode.dir/flags.make
+CMakeFiles/CleanCode.dir/src/Flock.cpp.o: ../src/Flock.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/valentin/Bureau/GitHub/CleanCode/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/CleanCode.dir/src/Flock.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/CleanCode.dir/src/Flock.cpp.o -c /home/valentin/Bureau/GitHub/CleanCode/src/Flock.cpp
+
+CMakeFiles/CleanCode.dir/src/Flock.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CleanCode.dir/src/Flock.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/valentin/Bureau/GitHub/CleanCode/src/Flock.cpp > CMakeFiles/CleanCode.dir/src/Flock.cpp.i
+
+CMakeFiles/CleanCode.dir/src/Flock.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CleanCode.dir/src/Flock.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/valentin/Bureau/GitHub/CleanCode/src/Flock.cpp -o CMakeFiles/CleanCode.dir/src/Flock.cpp.s
 
 CMakeFiles/CleanCode.dir/src/main.cpp.o: CMakeFiles/CleanCode.dir/flags.make
 CMakeFiles/CleanCode.dir/src/main.cpp.o: ../src/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/valentin/Bureau/GitHub/CleanCode/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/CleanCode.dir/src/main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/valentin/Bureau/GitHub/CleanCode/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/CleanCode.dir/src/main.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/CleanCode.dir/src/main.cpp.o -c /home/valentin/Bureau/GitHub/CleanCode/src/main.cpp
 
 CMakeFiles/CleanCode.dir/src/main.cpp.i: cmake_force
@@ -85,7 +98,7 @@ CMakeFiles/CleanCode.dir/src/main.cpp.s: cmake_force
 
 CMakeFiles/CleanCode.dir/src/render.cpp.o: CMakeFiles/CleanCode.dir/flags.make
 CMakeFiles/CleanCode.dir/src/render.cpp.o: ../src/render.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/valentin/Bureau/GitHub/CleanCode/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/CleanCode.dir/src/render.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/valentin/Bureau/GitHub/CleanCode/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/CleanCode.dir/src/render.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/CleanCode.dir/src/render.cpp.o -c /home/valentin/Bureau/GitHub/CleanCode/src/render.cpp
 
 CMakeFiles/CleanCode.dir/src/render.cpp.i: cmake_force
@@ -98,19 +111,21 @@ CMakeFiles/CleanCode.dir/src/render.cpp.s: cmake_force
 
 # Object files for target CleanCode
 CleanCode_OBJECTS = \
-"CMakeFiles/CleanCode.dir/src/boid.cpp.o" \
+"CMakeFiles/CleanCode.dir/src/Boid.cpp.o" \
+"CMakeFiles/CleanCode.dir/src/Flock.cpp.o" \
 "CMakeFiles/CleanCode.dir/src/main.cpp.o" \
 "CMakeFiles/CleanCode.dir/src/render.cpp.o"
 
 # External object files for target CleanCode
 CleanCode_EXTERNAL_OBJECTS =
 
-../bin/CleanCode: CMakeFiles/CleanCode.dir/src/boid.cpp.o
+../bin/CleanCode: CMakeFiles/CleanCode.dir/src/Boid.cpp.o
+../bin/CleanCode: CMakeFiles/CleanCode.dir/src/Flock.cpp.o
 ../bin/CleanCode: CMakeFiles/CleanCode.dir/src/main.cpp.o
 ../bin/CleanCode: CMakeFiles/CleanCode.dir/src/render.cpp.o
 ../bin/CleanCode: CMakeFiles/CleanCode.dir/build.make
 ../bin/CleanCode: CMakeFiles/CleanCode.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/valentin/Bureau/GitHub/CleanCode/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable ../bin/CleanCode"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/valentin/Bureau/GitHub/CleanCode/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable ../bin/CleanCode"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/CleanCode.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
