@@ -1,6 +1,6 @@
 #include "../lib/render.hpp"
 
-void initGL() {
+void init_gl() {
   glClearColor(0.1, 0.1, 0.1, 0.);
   glViewport(0, 0, 1000, 1000);
   glClear(GL_COLOR_BUFFER_BIT);
@@ -11,7 +11,7 @@ void initGL() {
   glLoadIdentity();
 }
 
-void renderCircle(const glm::vec3 &center, const glm::vec3 &color, const int &size) {
+void render_circle(const glm::vec3 &center, const glm::vec3 &color, const int &size) {
 
   glBegin(GL_TRIANGLE_FAN);
   glColor3f(color.x, color.y, color.z);
@@ -25,7 +25,7 @@ void renderCircle(const glm::vec3 &center, const glm::vec3 &color, const int &si
   glEnd();
 }
 
-void renderRect(const glm::vec3 &center, const glm::vec3 &color, const int &h, const int &w) {
+void render_rect(const glm::vec3 &center, const glm::vec3 &color, const int &h, const int &w) {
 
   glBegin(GL_LINE_STRIP);
   glColor3f(color.x, color.y, color.z);
@@ -36,7 +36,7 @@ void renderRect(const glm::vec3 &center, const glm::vec3 &color, const int &h, c
   glEnd();
 }
 
-void renderTriangle(const glm::vec3 &center, const glm::vec3 &dir, const float &size) {
+void render_triangle(const glm::vec3 &center, const glm::vec3 &dir, const float &size) {
 
   glm::vec3 dir_crossed = glm::normalize(glm::cross(-dir, glm::vec3(0,0,1)));
   glm::vec3 dir_normalized = glm::normalize(dir);

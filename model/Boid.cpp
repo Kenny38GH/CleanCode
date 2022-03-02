@@ -33,5 +33,5 @@ void Boid::update(const float &dT){
 }
 
 void Boid::render() const {
-  renderTriangle(_position, _velocity, 10.f);
+  render_triangle(_position, _velocity, 10.f);
 }

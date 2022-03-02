@@ -12,5 +12,8 @@ public:
     Flock() = default;
     ~Flock()= default;
 
-    inline void update(const Uint32 &dT) {for(Boid* b : _boids) b->update(dT);}
+    void update(const Uint32 &dT);
+    void render();
+    void add_boid(Boid* &b);
+
 };

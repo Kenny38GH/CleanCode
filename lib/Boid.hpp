@@ -7,7 +7,7 @@
 #include "render.hpp"
 
 #define MAX_SPEED 100.0f
-#define MAX_ACCEL 250.0f
+#define MAX_ACCEL 500.0f
 
 #define BASE_SPEED 5.0f
 
