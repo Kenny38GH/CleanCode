@@ -29,6 +29,8 @@ int main(int argc, char *argv[]) {
       while (!quit) {
 
         Uint64 start = SDL_GetPerformanceCounter();
+        int x, y;
+        SDL_GetMouseState(&x, &y);
 
         while (SDL_PollEvent(&e) != 0) {
           switch (e.type) {
@@ -47,8 +49,6 @@ int main(int argc, char *argv[]) {
         }
 
         if (last_event == SDL_MOUSEBUTTONDOWN) {
-          int x, y;
-          SDL_GetMouseState(&x, &y);
           Boid *nb = new Boid(glm::vec3(x, y, 0));
           objects.push_back(nb);
         }
@@ -64,6 +64,7 @@ int main(int argc, char *argv[]) {
         glm::vec3 point_to_seek =
             glm::vec3(glm::vec3(500 + 200 * glm::cos(time / 1000.),
                                 500 + 200 * glm::sin(time / 1000.), 0));
+        point_to_seek = glm::vec3(x, y, 0);
 
         for (Boid *physc : objects) {
           // Movement update and collision check
