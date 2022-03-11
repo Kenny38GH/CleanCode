@@ -1,7 +1,7 @@
 #include "../lib/render.hpp"
 
 void init_gl() {
-  glClearColor(0.1, 0.1, 0.1, 0.);
+  glClearColor(0.1f, 0.1f, 0.1f, 0.f);
   glViewport(0, 0, 1000, 1000);
   glClear(GL_COLOR_BUFFER_BIT);
   glMatrixMode(GL_PROJECTION);
@@ -11,7 +11,8 @@ void init_gl() {
   glLoadIdentity();
 }
 
-void render_circle(const glm::vec3 &center, const glm::vec3 &color, const int &size) {
+void render_circle(const glm::vec3 &center, const glm::vec3 &color,
+                   const int &size) {
 
   glBegin(GL_TRIANGLE_FAN);
   glColor3f(color.x, color.y, color.z);
@@ -25,7 +26,8 @@ void render_circle(const glm::vec3 &center, const glm::vec3 &color, const int &s
   glEnd();
 }
 
-void render_rect(const glm::vec3 &center, const glm::vec3 &color, const int &h, const int &w) {
+void render_rect(const glm::vec3 &center, const glm::vec3 &color, const int &h,
+                 const int &w) {
 
   glBegin(GL_LINE_STRIP);
   glColor3f(color.x, color.y, color.z);
@@ -36,14 +38,15 @@ void render_rect(const glm::vec3 &center, const glm::vec3 &color, const int &h, 
   glEnd();
 }
 
-void render_triangle(const glm::vec3 &center, const glm::vec3 &dir, const float &size) {
+void render_triangle(const glm::vec3 &center, const glm::vec3 &dir,
+                     const float &size) {
 
-  glm::vec3 dir_crossed = glm::normalize(glm::cross(-dir, glm::vec3(0,0,1)));
+  glm::vec3 dir_crossed = glm::normalize(glm::cross(-dir, glm::vec3(0, 0, 1)));
   glm::vec3 dir_normalized = glm::normalize(dir);
 
   glm::vec3 pt1 = center + dir_normalized * size;
   glm::vec3 pt2 = center - dir_normalized + dir_crossed * size * 0.5f;
-  glm::vec3 pt3 = center - dir_normalized - dir_crossed * size * 0.5f; 
+  glm::vec3 pt3 = center - dir_normalized - dir_crossed * size * 0.5f;
 
   glBegin(GL_TRIANGLES);
   glColor3f(1, 1, 1);

@@ -22,14 +22,14 @@ private:
 
 public:
   Boid() = default;
-  Boid(glm::vec3 position)
+  Boid(const glm::vec3 &position)
       : _position(position), _velocity(glm::vec3(2.f, 2.f, 0.f)),
         _acceleration(0) {}
   ~Boid() = default;
 
   void seek(const glm::vec3 &target);
   void seek_away(const glm::vec3 &target);
-  void update(const float &dT);
+  void update(const Uint32 &dT);
 
   void render() const;
 };

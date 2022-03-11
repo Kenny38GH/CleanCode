@@ -1,15 +1,18 @@
 #include "../lib/Flock.hpp"
 
-void Flock::update(const Uint32 &dT) {
-  for (int b_nb = 0; b_nb < _boids.size(); b_nb++) {
-    _boids[b_nb]->update(dT);
+Flock::~Flock() { std::cout << _boids.size() << std::endl; }
+
+void Flock::update(const Uint32 &dT, const glm::vec3 &point_to_seek) {
+  for (auto &boid : _boids) {
+    boid.seek(point_to_seek);
+    boid.update(dT);
   }
 }
 
 void Flock::render() {
-  for (int b_nb = 0; b_nb < _boids.size(); b_nb++) {
-    _boids[b_nb]->render();
+  for (auto &boid : _boids) {
+    boid.render();
   }
 }
 
-void Flock::add_boid() {}
+void Flock::add_boid(const glm::vec3 &pos) { _boids.push_back(Boid(pos)); }

@@ -1,4 +1,5 @@
 #include "../lib/Boid.hpp"
+#include "../lib/Flock.hpp"
 #include "../lib/render.hpp"
 #include <iostream>
 #include <list>
@@ -24,7 +25,7 @@ int main(int argc, char *argv[]) {
       SDL_Event e;
       SDL_EventType last_event;
 
-      std::list<Boid *> objects;
+      Flock flock;
 
       while (!quit) {
 
@@ -49,8 +50,7 @@ int main(int argc, char *argv[]) {
         }
 
         if (last_event == SDL_MOUSEBUTTONDOWN) {
-          Boid *nb = new Boid(glm::vec3(x, y, 0));
-          objects.push_back(nb);
+          flock.add_boid(glm::vec3(x, y, 0));
         }
 
         Uint64 event = SDL_GetPerformanceCounter();
@@ -61,17 +61,10 @@ int main(int argc, char *argv[]) {
         Uint32 time = SDL_GetTicks();
 
         float dT = (current - lastUpdate) / 1000.0f;
-        glm::vec3 point_to_seek =
-            glm::vec3(glm::vec3(500 + 200 * glm::cos(time / 1000.),
-                                500 + 200 * glm::sin(time / 1000.), 0));
-        point_to_seek = glm::vec3(x, y, 0);
+        glm::vec3 point_to_seek = glm::vec3(x, y, 0);
 
-        for (Boid *physc : objects) {
-          // Movement update and collision check
-          // physc->collision();
-          physc->seek(point_to_seek);
-          physc->update(dT);
-        }
+        flock.update(dT, point_to_seek);
+
         lastUpdate = current;
         Uint64 phys = SDL_GetPerformanceCounter();
 
@@ -81,15 +74,12 @@ int main(int argc, char *argv[]) {
 
         render_circle(point_to_seek, glm::vec3(1, 0, 0), 3);
 
-        for (Boid *rendc : objects) {
-          rendc->render();
-        }
+        flock.render();
+
         SDL_GL_SwapWindow(window);
 
         Uint64 end = SDL_GetPerformanceCounter();
       }
-
-      std::cout << objects.size() << std::endl;
 
       // Destroy context
       SDL_GL_DeleteContext(glcont);

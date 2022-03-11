@@ -18,7 +18,7 @@ void Boid::seek_away(const glm::vec3 &target) {
     _acceleration += steer;
 }
 
-void Boid::update(const float &dT) {
+void Boid::update(const Uint32 &dT) {
   // Position update
   _position.x += (_velocity.x * BASE_SPEED) * dT;
   _position.y += (_velocity.y * BASE_SPEED) * dT;
