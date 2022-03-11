@@ -2,7 +2,7 @@
 
 Flock::~Flock() { std::cout << _boids.size() << std::endl; }
 
-void Flock::update(const Uint32 &dT, const glm::vec3 &point_to_seek) {
+void Flock::update(const double &dT, const glm::vec3 &point_to_seek) {
   for (auto &boid : _boids) {
     boid.seek(point_to_seek);
     boid.update(dT);

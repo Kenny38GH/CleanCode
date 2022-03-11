@@ -29,7 +29,7 @@ public:
 
   void seek(const glm::vec3 &target);
   void seek_away(const glm::vec3 &target);
-  void update(const Uint32 &dT);
+  void update(const double &dT);
 
   void render() const;
 };
