@@ -4,7 +4,7 @@
 #include <iostream>
 #include <list>
 
-int main(int argc, char *argv[]) {
+int main() {
 
   SDL_Window *window = NULL;
 
@@ -29,7 +29,6 @@ int main(int argc, char *argv[]) {
 
       while (!quit) {
 
-        Uint64 start = SDL_GetPerformanceCounter();
         int x, y;
         SDL_GetMouseState(&x, &y);
 
@@ -53,20 +52,16 @@ int main(int argc, char *argv[]) {
           flock.add_boid(glm::vec3(x, y, 0));
         }
 
-        Uint64 event = SDL_GetPerformanceCounter();
-
         /* PHYSIQUE LOOP */
 
         Uint32 current = SDL_GetTicks();
-        Uint32 time = SDL_GetTicks();
 
-        double dT = (current - lastUpdate) / 1000.0f;
+        double dT = static_cast<float>(current - lastUpdate) / 1000.0f;
         glm::vec3 point_to_seek = glm::vec3(x, y, 0);
 
         flock.update(dT, point_to_seek);
 
         lastUpdate = current;
-        Uint64 phys = SDL_GetPerformanceCounter();
 
         /* RENDERING LOOP */
 
@@ -77,8 +72,6 @@ int main(int argc, char *argv[]) {
         flock.render();
 
         SDL_GL_SwapWindow(window);
-
-        Uint64 end = SDL_GetPerformanceCounter();
       }
 
       // Destroy context

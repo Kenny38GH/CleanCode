@@ -11,11 +11,15 @@
 
 #define BASE_SPEED 5.0f
 
+enum class BEHAVIOUR { SEEK, FLEE, FLOCK };
+
 class Boid {
 private:
   glm::vec3 _position;
   glm::vec3 _velocity;
   glm::vec3 _acceleration;
+
+  BEHAVIOUR _current_behaviour;
 
   float _view_range;
   float _view_angle;
@@ -24,11 +28,12 @@ public:
   Boid() = default;
   Boid(const glm::vec3 &position)
       : _position(position), _velocity(glm::vec3(2.f, 2.f, 0.f)),
-        _acceleration(0) {}
+        _acceleration(0), _current_behaviour(BEHAVIOUR::SEEK), _view_range(0),
+        _view_angle(0) {}
   ~Boid() = default;
 
   void seek(const glm::vec3 &target);
-  void seek_away(const glm::vec3 &target);
+  void flee(const glm::vec3 &target);
   void update(const double &dT);
 
   void render() const;
