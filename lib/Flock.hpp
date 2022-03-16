@@ -11,7 +11,7 @@ public:
   Flock() = default;
   ~Flock();
 
-  void update(const double &dT, const glm::vec3 &point_to_seek);
+  void update(const double &dT);
   void render();
   void add_boid(const glm::vec3 &pos);
 };

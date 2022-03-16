@@ -19,8 +19,8 @@ void render_circle(const glm::vec3 &center, const glm::vec3 &color,
   for (int i = 0; i < 20; i++) {
     float theta =
         2.0f * 3.1415926f * static_cast<float>(i) / static_cast<float>(20);
-    float x = size * cosf(theta);
-    float y = size * sinf(theta);
+    float x = static_cast<float>(size) * cosf(theta);
+    float y = static_cast<float>(size) * sinf(theta);
     glVertex2f(center.x + x, center.y + y);
   }
   glEnd();
@@ -31,10 +31,14 @@ void render_rect(const glm::vec3 &center, const glm::vec3 &color, const int &h,
 
   glBegin(GL_LINE_STRIP);
   glColor3f(color.x, color.y, color.z);
-  glVertex2f(center.x + h, center.y + w);
-  glVertex2f(center.x + h, center.y - w);
-  glVertex2f(center.x - h, center.y - w);
-  glVertex2f(center.x - h, center.y + w);
+  glVertex2f(center.x + static_cast<float>(h),
+             center.y + static_cast<float>(w));
+  glVertex2f(center.x + static_cast<float>(h),
+             center.y - static_cast<float>(w));
+  glVertex2f(center.x - static_cast<float>(h),
+             center.y - static_cast<float>(w));
+  glVertex2f(center.x - static_cast<float>(h),
+             center.y + static_cast<float>(w));
   glEnd();
 }
 

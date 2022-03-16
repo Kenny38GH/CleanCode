@@ -1,21 +1,17 @@
+
+# Consider dependencies only in project.
+set(CMAKE_DEPENDS_IN_PROJECT_ONLY OFF)
+
 # The set of languages for which implicit dependencies are needed:
 set(CMAKE_DEPENDS_LANGUAGES
-  "CXX"
   )
-# The set of files for implicit dependencies of each language:
-set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/valentin/Bureau/GitHub/CleanCode/src/Boid.cpp" "/home/valentin/Bureau/GitHub/CleanCode/build/CMakeFiles/CleanCode.dir/src/Boid.cpp.o"
-  "/home/valentin/Bureau/GitHub/CleanCode/src/Flock.cpp" "/home/valentin/Bureau/GitHub/CleanCode/build/CMakeFiles/CleanCode.dir/src/Flock.cpp.o"
-  "/home/valentin/Bureau/GitHub/CleanCode/src/main.cpp" "/home/valentin/Bureau/GitHub/CleanCode/build/CMakeFiles/CleanCode.dir/src/main.cpp.o"
-  "/home/valentin/Bureau/GitHub/CleanCode/src/render.cpp" "/home/valentin/Bureau/GitHub/CleanCode/build/CMakeFiles/CleanCode.dir/src/render.cpp.o"
-  )
-set(CMAKE_CXX_COMPILER_ID "GNU")
 
-# The include file search paths:
-set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "../src"
-  "/usr/include/SDL2"
-  "../"
+# The set of dependency files which are needed:
+set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/home/dyokiin/PROG_IMAC2/CleanCode/src/Boid.cpp" "CMakeFiles/CleanCode.dir/src/Boid.cpp.o" "gcc" "CMakeFiles/CleanCode.dir/src/Boid.cpp.o.d"
+  "/home/dyokiin/PROG_IMAC2/CleanCode/src/Flock.cpp" "CMakeFiles/CleanCode.dir/src/Flock.cpp.o" "gcc" "CMakeFiles/CleanCode.dir/src/Flock.cpp.o.d"
+  "/home/dyokiin/PROG_IMAC2/CleanCode/src/main.cpp" "CMakeFiles/CleanCode.dir/src/main.cpp.o" "gcc" "CMakeFiles/CleanCode.dir/src/main.cpp.o.d"
+  "/home/dyokiin/PROG_IMAC2/CleanCode/src/render.cpp" "CMakeFiles/CleanCode.dir/src/render.cpp.o" "gcc" "CMakeFiles/CleanCode.dir/src/render.cpp.o.d"
   )
 
 # Targets to which this target links.
