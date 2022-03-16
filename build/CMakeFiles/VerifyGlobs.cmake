@@ -7,6 +7,7 @@ set(OLD_GLOB
   "/home/valentin/Bureau/GitHub/CleanCode/src/Boid.cpp"
   "/home/valentin/Bureau/GitHub/CleanCode/src/Flock.cpp"
   "/home/valentin/Bureau/GitHub/CleanCode/src/main.cpp"
+  "/home/valentin/Bureau/GitHub/CleanCode/src/random.cpp"
   "/home/valentin/Bureau/GitHub/CleanCode/src/render.cpp"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")

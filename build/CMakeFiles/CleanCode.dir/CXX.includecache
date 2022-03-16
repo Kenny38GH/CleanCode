@@ -16,6 +16,16 @@ glm/gtx/norm.hpp
 iostream
 -
 
+/home/valentin/Bureau/GitHub/CleanCode/lib/random.hpp
+cstdlib
+-
+iostream
+-
+random
+-
+time.h
+-
+
 /home/valentin/Bureau/GitHub/CleanCode/lib/render.hpp
 GL/gl.h
 -
@@ -29,10 +39,16 @@ iostream
 /home/valentin/Bureau/GitHub/CleanCode/src/main.cpp
 ../lib/Boid.hpp
 /home/valentin/Bureau/GitHub/CleanCode/lib/Boid.hpp
+../lib/random.hpp
+/home/valentin/Bureau/GitHub/CleanCode/lib/random.hpp
 ../lib/render.hpp
 /home/valentin/Bureau/GitHub/CleanCode/lib/render.hpp
 iostream
 -
 list
 -
+
+/home/valentin/Bureau/GitHub/CleanCode/src/random.cpp
+../lib/random.hpp
+/home/valentin/Bureau/GitHub/CleanCode/lib/random.hpp
 

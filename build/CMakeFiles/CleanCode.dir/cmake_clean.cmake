@@ -4,6 +4,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/CleanCode.dir/src/Boid.cpp.o"
   "CMakeFiles/CleanCode.dir/src/Flock.cpp.o"
   "CMakeFiles/CleanCode.dir/src/main.cpp.o"
+  "CMakeFiles/CleanCode.dir/src/random.cpp.o"
   "CMakeFiles/CleanCode.dir/src/render.cpp.o"
 )
 

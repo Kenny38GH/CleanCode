@@ -11,8 +11,12 @@ CMakeFiles/CleanCode.dir/src/Flock.cpp.o: ../lib/render.hpp
 CMakeFiles/CleanCode.dir/src/Flock.cpp.o: ../src/Flock.cpp
 
 CMakeFiles/CleanCode.dir/src/main.cpp.o: ../lib/Boid.hpp
+CMakeFiles/CleanCode.dir/src/main.cpp.o: ../lib/random.hpp
 CMakeFiles/CleanCode.dir/src/main.cpp.o: ../lib/render.hpp
 CMakeFiles/CleanCode.dir/src/main.cpp.o: ../src/main.cpp
+
+CMakeFiles/CleanCode.dir/src/random.cpp.o: ../lib/random.hpp
+CMakeFiles/CleanCode.dir/src/random.cpp.o: ../src/random.cpp
 
 CMakeFiles/CleanCode.dir/src/render.cpp.o: ../lib/render.hpp
 CMakeFiles/CleanCode.dir/src/render.cpp.o: ../src/render.cpp

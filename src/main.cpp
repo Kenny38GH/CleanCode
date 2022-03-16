@@ -1,4 +1,5 @@
 #include "../lib/Boid.hpp"
+#include "../lib/random.hpp"
 #include "../lib/render.hpp"
 #include <iostream>
 #include <list>
@@ -90,7 +91,11 @@ int main(int argc, char *argv[]) {
       }
 
       std::cout << objects.size() << std::endl;
-
+      random_num_uniform_distrib(4.f, 10.f);
+      std::cout << primary_rand();
+      std::cout << std::endl;
+      std::cout << "AND THE RES IS.. ";
+      std::cout << heads_or_tails();
       // Destroy context
       SDL_GL_DeleteContext(glcont);
     }
