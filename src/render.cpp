@@ -1,6 +1,6 @@
 #include "../includes/render.hpp"
 
-void init_gl() {
+void begin_opengl_frame() {
   glClearColor(0.1, 0.1, 0.1, 0.);
   glViewport(0, 0, 1000, 1000);
   glClear(GL_COLOR_BUFFER_BIT);

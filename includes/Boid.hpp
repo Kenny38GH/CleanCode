@@ -1,9 +1,7 @@
 #pragma once
 
 #include <glm/glm.hpp>
-#define GLM_ENABLE_EXPERIMENTAL
 #include "render.hpp"
-#include <glm/gtx/norm.hpp>
 #include <iostream>
 
 #define MAX_SPEED 100.0f

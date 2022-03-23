@@ -77,7 +77,7 @@ int main(int argc, char *argv[]) {
 
         /* RENDERING LOOP */
 
-        init_gl();
+        begin_opengl_frame();
 
         render_circle(point_to_seek, glm::vec3(1, 0, 0), 3);
 
