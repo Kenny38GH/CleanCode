@@ -1,11 +1,20 @@
 #include "../lib/random.hpp"
 
-float random_num_uniform_distrib(float inf_bound, float sup_bound) {
-  std::random_device rd;  // non-deterministic generator
-  std::mt19937 gen(rd()); // to seed mersenne twister.
-  std::uniform_int_distribution<> dist(
-      inf_bound, sup_bound); // distribute results between inf_bound and
-                             // sup_bound inclusive.
-  std::cout << dist(gen);    // pass the generator to the distribution.
-  std::cout << std::endl;
+float random_num(int inf_bound, int sup_bound) {
+  return rand() % sup_bound + inf_bound;
+}
+
+int custom_random_num(std::vector<float> finite_space) {
+  float k = primary_rand();
+  float x = 0;
+  for (size_t i = 0; i < finite_space.size(); i++) {
+    x += finite_space[i];
+    if (x >= k) {
+      return i;
+    }
+  }
+}
+
+float accidental_phenomena(float lambda) {
+  return (-1 / lambda) * log(primary_rand());
 }
