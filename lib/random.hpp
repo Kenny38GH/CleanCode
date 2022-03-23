@@ -1,11 +1,10 @@
+#include <cassert>
 #include <cstdlib>
 #include <functional>
 #include <iostream>
 #include <random>
 #include <time.h>
 #include <vector>
-
-float random_num_uniform_distrib(float inf_bound, float sup_bound);
 
 inline float primary_rand() {
   srand((unsigned)time(NULL));
@@ -17,4 +16,7 @@ inline int heads_or_tails() {
   return primary_rand() > 0.5 ? 1 : 0;
 }
 
-int custom_random_num(std::vector<float> finite_space);
+int number_with_random_law(int number_of_probabilities);
+int number_with_custom_law(std::vector<float> custom_law);
+
+float accidental_phenomena(float lambda);

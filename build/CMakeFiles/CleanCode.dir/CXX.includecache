@@ -17,13 +17,19 @@ iostream
 -
 
 /home/valentin/Bureau/GitHub/CleanCode/lib/random.hpp
+cassert
+-
 cstdlib
+-
+functional
 -
 iostream
 -
 random
 -
 time.h
+-
+vector
 -
 
 /home/valentin/Bureau/GitHub/CleanCode/lib/render.hpp
@@ -47,8 +53,4 @@ iostream
 -
 list
 -
-
-/home/valentin/Bureau/GitHub/CleanCode/src/random.cpp
-../lib/random.hpp
-/home/valentin/Bureau/GitHub/CleanCode/lib/random.hpp
 

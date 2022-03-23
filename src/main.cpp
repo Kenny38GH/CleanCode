@@ -18,7 +18,6 @@ int main(int argc, char *argv[]) {
       printf("Window could not be created! SDL_Error: %s\n", SDL_GetError());
 
     } else {
-
       SDL_GLContext glcont = SDL_GL_CreateContext(window);
       bool quit = false;
       Uint32 lastUpdate = SDL_GetTicks();
@@ -56,7 +55,7 @@ int main(int argc, char *argv[]) {
 
         Uint64 event = SDL_GetPerformanceCounter();
 
-        /* PHYSIQUE LOOP */
+        /* PHYSIQUE LOOP*/
 
         Uint32 current = SDL_GetTicks();
         Uint32 time = SDL_GetTicks();
@@ -90,22 +89,26 @@ int main(int argc, char *argv[]) {
         Uint64 end = SDL_GetPerformanceCounter();
       }
 
-      std::cout << objects.size() << std::endl;
-      random_num_uniform_distrib(4.f, 10.f);
-      std::cout << primary_rand();
-      std::cout << std::endl;
-      std::cout << "AND THE RES IS.. ";
-      std::cout << heads_or_tails();
+      std::cout << "Number of boids: " << objects.size() << std::endl;
+      //
       // Destroy context
       SDL_GL_DeleteContext(glcont);
     }
-  }
+    /* ZONE DE TEST DES FONCTIONS RANDOM */
+    std::cout << "A random number: " << primary_rand() << std::endl;
+    std::cout << "AND THE RES IS.. " << heads_or_tails() << std::endl;
+    std::cout << "Accidental event: " << accidental_phenomena(3) << std::endl;
+    std::cout << "Random value from random law: " << number_with_random_law(9)
+              << std::endl;
 
+    std::vector<float> dumb_law = {0.2, 0.5, 0.3};
+    std::cout << "Custom random value: " << number_with_custom_law(dumb_law)
+              << std::endl;
+  }
   // Destroy window
   SDL_DestroyWindow(window);
 
   // Quit SDL subsystems
   SDL_Quit();
-
   return 0;
 }
