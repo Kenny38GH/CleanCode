@@ -1,5 +1,5 @@
-#include "../lib/Boid.hpp"
-#include "../lib/render.hpp"
+#include "../includes/Boid.hpp"
+#include "../includes/render.hpp"
 #include <iostream>
 #include <list>
 

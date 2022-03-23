@@ -1,4 +1,4 @@
-#include "../lib/Flock.hpp"
+#include "../includes/Flock.hpp"
 
 void Flock::update(const Uint32 &dT) {
   for (int b_nb = 0; b_nb < _boids.size(); b_nb++) {

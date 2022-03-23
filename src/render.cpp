@@ -1,4 +1,4 @@
-#include "../lib/render.hpp"
+#include "../includes/render.hpp"
 
 void init_gl() {
   glClearColor(0.1, 0.1, 0.1, 0.);

@@ -1,4 +1,4 @@
-#include "../lib/Boid.hpp"
+#include "../includes/Boid.hpp"
 
 void Boid::seek(const glm::vec3 &target) {
   glm::vec3 desired = target - _position;
