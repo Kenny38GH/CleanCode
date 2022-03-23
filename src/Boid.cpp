@@ -18,7 +18,7 @@ void Boid::flee(const glm::vec3 &target) {
     _acceleration += steer;
 }
 
-void Boid::flock() {}
+void Boid::flock(const vector<Boid*> &nearests) {}
 
 void Boid::update(const double &dT) {
 
@@ -42,10 +42,9 @@ void Boid::update(const double &dT) {
     _velocity.y += _acceleration.y * dTf;
   }
 
-  _position.x += (_velocity.x * BASE_SPEED) * dTf;
-  _position.y += (_velocity.y * BASE_SPEED) * dTf;
+  _position += (_velocity * BASE_SPEED) * dTf;
 
-  _acceleration -= _acceleration * 0.2f;
+  _acceleration -= _acceleration * 0.15f;
 }
 
 const glm::vec3 Boid::update_behaviour() {
