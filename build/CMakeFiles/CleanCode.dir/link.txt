@@ -1,1 +1,0 @@
-/usr/bin/c++     CMakeFiles/CleanCode.dir/src/Boid.cpp.o CMakeFiles/CleanCode.dir/src/Flock.cpp.o CMakeFiles/CleanCode.dir/src/main.cpp.o CMakeFiles/CleanCode.dir/src/render.cpp.o  -o ../bin/CleanCode  -lSDL2 -lGL -lGLEW -lGLU -lGL -lGLEW -lGLU 
