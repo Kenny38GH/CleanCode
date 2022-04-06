@@ -44,3 +44,58 @@ int number_with_custom_law(std::vector<float> custom_law) {
 float accidental_phenomena(float lambda) {
   return (-1 / lambda) * log(primary_rand());
 }
+
+float bernoulli(float p) {
+  float r = primary_rand();
+  unsigned int br = 0;
+  if (r >= p)
+    br = 1;
+}
+
+unsigned int geo_sequence(float p) {
+  bool isFinish = false;
+  unsigned int nb_try = 0;
+  while (isFinish == false) {
+    float r = primary_rand();
+    nb_try += 1;
+    if (r > p) {
+      isFinish = true;
+    }
+  }
+  return nb_try;
+}
+
+float binomial_law(unsigned int n, unsigned int k, float p) {
+  int Ckn = 1; // k parmis n
+  if (k > n - k)
+    k = n - k;
+
+  for (int i = 0; i < k; i++) {
+    Ckn = Ckn * (n - i);
+    Ckn = Ckn / (i + 1);
+  }
+
+  return Ckn * pow(p, k) *
+         pow(1 - p, n - k); // Nb de succès (k) en n parties d'une probabilité p
+}
+
+int poissrnd(float mean) {
+  float r;
+  float x, m;
+  float pi = 3.1415926535897932384626433832795;
+  float sqrt_mean = sqrt(mean);
+  float log_mean = log(mean);
+  float g_x;
+  float f_m;
+
+  while (drand48() > r) {
+    while (x < 0) {
+      x = mean + sqrt_mean * tan(pi * (drand48() - 1 / 2.0));
+    }
+    g_x = sqrt_mean / (pi * ((x - mean) * (x - mean) + mean));
+    m = floor(x);
+    f_m = exp(m * log_mean - mean - lgamma(m + 1));
+    r = f_m / g_x / 2.4;
+  }
+  return (int)m;
+}

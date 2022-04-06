@@ -1,6 +1,7 @@
 #include <cassert>
 #include <cstdlib>
 #include <functional>
+#include <glm/glm.hpp>
 #include <iostream>
 #include <random>
 #include <time.h>
@@ -20,3 +21,11 @@ int number_with_random_law(int number_of_probabilities);
 int number_with_custom_law(std::vector<float> custom_law);
 
 float accidental_phenomena(float lambda);
+float bernoulli(float p);
+unsigned int geo_sequence(float p);
+float binomial_law(unsigned int n, unsigned int k, float p);
+inline unsigned int factorial(unsigned int n) {
+  return (n == 1 || n == 0) ? 1 : factorial(n - 1) * n;
+}
+
+int poissrnd(float mean);
