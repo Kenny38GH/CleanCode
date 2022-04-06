@@ -14,4 +14,5 @@ public:
   void update(const double &dT);
   void render();
   void add_boid(const glm::vec3 &pos);
+  const std::vector<Boid*> in_fov_of(const Boid &boid);
 };

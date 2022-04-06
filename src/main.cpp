@@ -1,6 +1,6 @@
-#include "../lib/Boid.hpp"
-#include "../lib/Flock.hpp"
-#include "../lib/render.hpp"
+#include "../includes/Boid.hpp"
+#include "../includes/Flock.hpp"
+#include "../includes/render.hpp"
 #include <iostream>
 #include <list>
 

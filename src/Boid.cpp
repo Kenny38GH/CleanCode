@@ -1,4 +1,4 @@
-#include "../lib/Boid.hpp"
+#include "../includes/Boid.hpp"
 
 void Boid::seek(const glm::vec3 &target) {
   glm::vec3 desired = target - _position;
@@ -18,7 +18,14 @@ void Boid::flee(const glm::vec3 &target) {
     _acceleration += steer;
 }
 
-void Boid::flock(const vector<Boid*> &nearests) {}
+void Boid::flock(const std::vector<Boid*> &nearests) {}
+
+const bool Boid::sees(const Boid &boid) const {
+  glm::vec3 dist = boid._position - _position;
+  float vec_dot  = glm::dot(_velocity, dist) ;
+  float angle    = vec_dot / (glm::length(_velocity)*glm::length(dist));
+  return ((angle > 360 - _view_angle) && (glm::length(dist) < _view_range)) ? true : false; 
+}
 
 void Boid::update(const double &dT) {
 
@@ -33,7 +40,7 @@ void Boid::update(const double &dT) {
     flee(target);
     break;
   case BEHAVIOUR::FLOCK:
-    flock();
+    // flock();
     break;
   }
 

@@ -19,8 +19,8 @@ file(GLOB_RECURSE MY_SOURCES CONFIGURE_DEPENDS src/*)
 target_sources(${PROJECT_NAME} PRIVATE ${MY_SOURCES})
 target_include_directories(${PROJECT_NAME} PRIVATE src)
 
-add_subdirectory(lib)
-target_link_libraries(${PROJECT_NAME} PUBLIC lib)
+add_subdirectory(includes)
+target_link_libraries(${PROJECT_NAME} PUBLIC includes)
 
 pkg_check_modules(SDL2 REQUIRED sdl2)
 pkg_check_modules(OpenGL REQUIRED gl)
