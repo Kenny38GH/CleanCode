@@ -66,17 +66,9 @@ unsigned int geo_sequence(float p) {
 }
 
 float binomial_law(unsigned int n, unsigned int k, float p) {
-  int Ckn = 1; // k parmis n
-  if (k > n - k)
-    k = n - k;
-
-  for (int i = 0; i < k; i++) {
-    Ckn = Ckn * (n - i);
-    Ckn = Ckn / (i + 1);
-  }
-
-  return Ckn * pow(p, k) *
-         pow(1 - p, n - k); // Nb de succès (k) en n parties d'une probabilité p
+  float Ckn = factorial(n) / (factorial(k) * factorial(n - k));
+  std::cout << Ckn << std::endl;
+  return Ckn * pow(p, k) * pow(1 - p, n - k);
 }
 
 int poissrnd(float mean) {

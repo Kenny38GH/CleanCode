@@ -96,14 +96,23 @@ int main(int argc, char *argv[]) {
     }
     /* ZONE DE TEST DES FONCTIONS RANDOM */
     std::cout << "A random number: " << primary_rand() << std::endl;
-    std::cout << "AND THE RES IS.. " << heads_or_tails() << std::endl;
-    std::cout << "Accidental event: " << accidental_phenomena(3) << std::endl;
+    std::cout << "Res of heads or tails (0 or 1)..: " << heads_or_tails()
+              << std::endl;
+    std::cout << "Accidental event (parameter fixed): "
+              << accidental_phenomena(3) << std::endl;
     std::cout << "Random value from random law: " << number_with_random_law(9)
               << std::endl;
 
     std::vector<float> dumb_law = {0.2, 0.5, 0.3};
     std::cout << "Custom random value: " << number_with_custom_law(dumb_law)
               << std::endl;
+    std::cout << "Bernouilli law res :" << bernoulli(0.9) << std::endl;
+    std::cout << "Nb de try jusqu'à avoir un succès | Geo sequence res: "
+              << geo_sequence(0.99f) << std::endl;
+    std::cout << "Proba d'avoir k succès en n parties avec une probabilité de "
+                 "succès p | Binomial law res : "
+              << binomial_law(10, 8, 0.9f) << std::endl;
+    std::cout << "Poisson law res: " << poissrnd(0.5) << std::endl;
   }
   // Destroy window
   SDL_DestroyWindow(window);

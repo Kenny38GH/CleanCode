@@ -7,10 +7,7 @@
 #include <time.h>
 #include <vector>
 
-inline float primary_rand() {
-  srand((unsigned)time(NULL));
-  return (float)rand() / RAND_MAX;
-}
+inline float primary_rand() { return (float)rand() / RAND_MAX; }
 
 inline int heads_or_tails() {
   srand((unsigned)time(NULL));
