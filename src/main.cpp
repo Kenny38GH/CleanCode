@@ -56,9 +56,7 @@ int main() {
 
         Uint32 current = SDL_GetTicks();
 
-        double dT = static_cast<float>(current - lastUpdate) / 1000.0f;
-        glm::vec3 point_to_seek = glm::vec3(x, y, 0);
-
+        float dT = static_cast<float>(current - lastUpdate) / 1000.0f;
         flock.update(dT);
 
         lastUpdate = current;
@@ -66,9 +64,6 @@ int main() {
         /* RENDERING LOOP */
 
         init_gl();
-
-        render_circle(point_to_seek, glm::vec3(1, 0, 0), 3);
-
         flock.render();
 
         SDL_GL_SwapWindow(window);

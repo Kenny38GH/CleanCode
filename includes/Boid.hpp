@@ -28,18 +28,18 @@ public:
   Boid() = default;
   explicit Boid(const glm::vec3 &position)
       : _position(position), _velocity(glm::vec3(2.f, 2.f, 0.f)),
-        _acceleration(0), _current_behaviour(BEHAVIOUR::SEEK), _view_range(0),
-        _view_angle(0) {}
+        _acceleration(0), _current_behaviour(BEHAVIOUR::SEEK), _view_range(60),
+        _view_angle(270) {}
   ~Boid() = default;
 
   void seek(const glm::vec3 &target);
   void flee(const glm::vec3 &target);
-  void flock(const std::vector<Boid*> &nearest);
+  void flock(const std::vector<Boid*> &nearest, const float &dT);
 
-  const bool sees(const Boid &boid) const;
+  bool sees(const Boid &boid) const;
 
-  void update(const double &dT);
-  const glm::vec3 update_behaviour();
+  void update(const float &dT, std::vector<Boid*> nearests);
+  const glm::vec3 update_behaviour(std::vector<Boid*> nearests);
 
   void render() const;
 };
