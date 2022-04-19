@@ -1,6 +1,7 @@
 #include "../includes/Boid.hpp"
 #include "../includes/Flock.hpp"
-#include "../includes/render.hpp"
+#include "../includes/render_assets.hpp"
+#include "../includes/render_shape.hpp"
 #include <iostream>
 #include <list>
 
@@ -64,6 +65,8 @@ int main() {
         /* RENDERING LOOP */
 
         init_gl();
+        display_grass();
+        display_border();
         flock.render();
 
         SDL_GL_SwapWindow(window);

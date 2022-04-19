@@ -1,4 +1,4 @@
-#include "../includes/render.hpp"
+#include "../includes/render_shape.hpp"
 
 void init_gl() {
   glClearColor(0.1f, 0.1f, 0.1f, 0.f);
@@ -31,14 +31,16 @@ void render_rect(const glm::vec3 &center, const glm::vec3 &color, const int &h,
 
   glBegin(GL_LINE_STRIP);
   glColor3f(color.x, color.y, color.z);
-  glVertex2f(center.x + static_cast<float>(h),
-             center.y + static_cast<float>(w));
-  glVertex2f(center.x + static_cast<float>(h),
-             center.y - static_cast<float>(w));
-  glVertex2f(center.x - static_cast<float>(h),
-             center.y - static_cast<float>(w));
-  glVertex2f(center.x - static_cast<float>(h),
-             center.y + static_cast<float>(w));
+  glVertex2f(center.x + static_cast<float>(h * 0.5),
+             center.y + static_cast<float>(w * 0.5));
+  glVertex2f(center.x + static_cast<float>(h * 0.5),
+             center.y - static_cast<float>(w * 0.5));
+  glVertex2f(center.x - static_cast<float>(h * 0.5),
+             center.y - static_cast<float>(w * 0.5));
+  glVertex2f(center.x - static_cast<float>(h * 0.5),
+             center.y + static_cast<float>(w * 0.5));
+  glVertex2f(center.x + static_cast<float>(h * 0.5),
+             center.y + static_cast<float>(w * 0.5));
   glEnd();
 }
 
