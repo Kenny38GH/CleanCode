@@ -1,35 +1,27 @@
 #pragma once
-
-#include <glm/glm.hpp>
-#define GLM_ENABLE_EXPERIMENTAL
 #include "render.hpp"
-#include <glm/gtx/norm.hpp>
-#include <iostream>
 
-#define MAX_SPEED 100.0f
+#define MAX_SPEED 8.0f
 #define MAX_ACCEL 500.0f
 
-#define BASE_SPEED 5.0f
+#define BASE_SPEED 1.f
 
 class Boid {
 private:
-  glm::vec3 _position;
-  glm::vec3 _velocity;
-  glm::vec3 _acceleration;
+  glm::vec2 _velocity;
+  glm::vec2 _acceleration;
 
   float _view_range;
   float _view_angle;
 
 public:
   Boid() = default;
-  Boid(glm::vec3 position)
-      : _position(position), _velocity(glm::vec3(2.f, 2.f, 0.f)),
-        _acceleration(0) {}
+  glm::vec2 _position;
+  Boid(glm::vec2 position)
+      : _position(position), _velocity(glm::vec2(1.f, 1.f)), _acceleration(0) {}
   ~Boid() = default;
 
-  void seek(const glm::vec3 &target);
-  void seek_away(const glm::vec3 &target);
+  void seek(const glm::vec2 &target);
+  void seek_away(const glm::vec2 &target);
   void update(const float &dT);
-
-  void render() const;
 };

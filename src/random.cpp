@@ -50,6 +50,7 @@ float bernoulli(float p) {
   unsigned int br = 0;
   if (r >= p)
     br = 1;
+  return br;
 }
 
 unsigned int geo_sequence(float p) {
@@ -67,18 +68,19 @@ unsigned int geo_sequence(float p) {
 
 float binomial_law(unsigned int n, unsigned int k, float p) {
   float Ckn = factorial(n) / (factorial(k) * factorial(n - k));
-  std::cout << Ckn << std::endl;
   return Ckn * pow(p, k) * pow(1 - p, n - k);
 }
 
 int poissrnd(float mean) {
-  float r;
-  float x, m;
+  std::cout << "Still not working --> ";
+  float r = 0.f;
+  float x = 0.f;
+  float m = 0.f;
   float pi = 3.1415926535897932384626433832795;
   float sqrt_mean = sqrt(mean);
   float log_mean = log(mean);
-  float g_x;
-  float f_m;
+  float g_x = 0.f;
+  float f_m = 0.f;
 
   while (drand48() > r) {
     while (x < 0) {
@@ -88,6 +90,6 @@ int poissrnd(float mean) {
     m = floor(x);
     f_m = exp(m * log_mean - mean - lgamma(m + 1));
     r = f_m / g_x / 2.4;
-  }
+  };
   return (int)m;
 }

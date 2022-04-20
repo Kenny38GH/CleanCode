@@ -1,26 +1,30 @@
+
+# Consider dependencies only in project.
+set(CMAKE_DEPENDS_IN_PROJECT_ONLY OFF)
+
 # The set of languages for which implicit dependencies are needed:
 set(CMAKE_DEPENDS_LANGUAGES
-  "CXX"
   )
-# The set of files for implicit dependencies of each language:
-set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/valentin/Bureau/GitHub/CleanCode/src/Boid.cpp" "/home/valentin/Bureau/GitHub/CleanCode/build/CMakeFiles/CleanCode.dir/src/Boid.cpp.o"
-  "/home/valentin/Bureau/GitHub/CleanCode/src/Flock.cpp" "/home/valentin/Bureau/GitHub/CleanCode/build/CMakeFiles/CleanCode.dir/src/Flock.cpp.o"
-  "/home/valentin/Bureau/GitHub/CleanCode/src/main.cpp" "/home/valentin/Bureau/GitHub/CleanCode/build/CMakeFiles/CleanCode.dir/src/main.cpp.o"
-  "/home/valentin/Bureau/GitHub/CleanCode/src/random.cpp" "/home/valentin/Bureau/GitHub/CleanCode/build/CMakeFiles/CleanCode.dir/src/random.cpp.o"
-  "/home/valentin/Bureau/GitHub/CleanCode/src/render.cpp" "/home/valentin/Bureau/GitHub/CleanCode/build/CMakeFiles/CleanCode.dir/src/render.cpp.o"
-  )
-set(CMAKE_CXX_COMPILER_ID "GNU")
 
-# The include file search paths:
-set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "../src"
-  "/usr/include/SDL2"
-  "../"
+# The set of dependency files which are needed:
+set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/home/valentin/Bureau/GitHub/P6_CleanCode/src/Boid.cpp" "CMakeFiles/CleanCode.dir/src/Boid.cpp.o" "gcc" "CMakeFiles/CleanCode.dir/src/Boid.cpp.o.d"
+  "/home/valentin/Bureau/GitHub/P6_CleanCode/src/main.cpp" "CMakeFiles/CleanCode.dir/src/main.cpp.o" "gcc" "CMakeFiles/CleanCode.dir/src/main.cpp.o.d"
+  "/home/valentin/Bureau/GitHub/P6_CleanCode/src/random.cpp" "CMakeFiles/CleanCode.dir/src/random.cpp.o" "gcc" "CMakeFiles/CleanCode.dir/src/random.cpp.o.d"
+  "/home/valentin/Bureau/GitHub/P6_CleanCode/src/render.cpp" "CMakeFiles/CleanCode.dir/src/render.cpp.o" "gcc" "CMakeFiles/CleanCode.dir/src/render.cpp.o.d"
   )
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
+  "/home/valentin/Bureau/GitHub/P6_CleanCode/build/p6/CMakeFiles/p6.dir/DependInfo.cmake"
+  "/home/valentin/Bureau/GitHub/P6_CleanCode/build/p6/third-party/glpp-extended/CMakeFiles/glpp-extended.dir/DependInfo.cmake"
+  "/home/valentin/Bureau/GitHub/P6_CleanCode/build/p6/third-party/glpp-extended/lib/glpp/CMakeFiles/glpp.dir/DependInfo.cmake"
+  "/home/valentin/Bureau/GitHub/P6_CleanCode/build/p6/third-party/glpp-extended/lib/glpp/CMakeFiles/glad.dir/DependInfo.cmake"
+  "/home/valentin/Bureau/GitHub/P6_CleanCode/build/p6/third-party/img/CMakeFiles/img.dir/DependInfo.cmake"
+  "/home/valentin/Bureau/GitHub/P6_CleanCode/build/p6/third-party/img/CMakeFiles/stb_image.dir/DependInfo.cmake"
+  "/home/valentin/Bureau/GitHub/P6_CleanCode/build/p6/third-party/exe_path/CMakeFiles/exe_path.dir/DependInfo.cmake"
+  "/home/valentin/Bureau/GitHub/P6_CleanCode/build/p6/third-party/imgui/CMakeFiles/ImGui.dir/DependInfo.cmake"
+  "/home/valentin/Bureau/GitHub/P6_CleanCode/build/p6/third-party/glfw/src/CMakeFiles/glfw.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

@@ -1,3 +1,4 @@
+#pragma once
 #include <cassert>
 #include <cstdlib>
 #include <functional>
@@ -6,8 +7,9 @@
 #include <random>
 #include <time.h>
 #include <vector>
+#define RAND_MAX 2147483647
 
-inline float primary_rand() { return (float)rand() / RAND_MAX; }
+inline float primary_rand() { return (float)rand() / (float)RAND_MAX; }
 
 inline int heads_or_tails() {
   srand((unsigned)time(NULL));

@@ -1,18 +1,18 @@
 #include "../lib/Boid.hpp"
 
-void Boid::seek(const glm::vec3 &target) {
-  glm::vec3 desired = target - _position;
+void Boid::seek(const glm::vec2 &target) {
+  glm::vec2 desired = target - _position;
   desired = glm::normalize(desired) * MAX_SPEED;
-  glm::vec3 steer = desired - _velocity;
+  glm::vec2 steer = desired - _velocity;
 
   if (glm::length(_acceleration + steer) < MAX_ACCEL)
     _acceleration += steer;
 }
 
-void Boid::seek_away(const glm::vec3 &target) {
-  glm::vec3 desired = target - _position;
+void Boid::seek_away(const glm::vec2 &target) {
+  glm::vec2 desired = target - _position;
   desired = glm::normalize(desired) * MAX_SPEED;
-  glm::vec3 steer = -desired - _velocity;
+  glm::vec2 steer = -desired - _velocity;
 
   if (glm::length(_acceleration + steer) < MAX_ACCEL)
     _acceleration += steer;
@@ -29,7 +29,5 @@ void Boid::update(const float &dT) {
     _velocity.y += _acceleration.y * dT;
   }
 
-  _acceleration = glm::vec3(0);
+  _acceleration = glm::vec2(0);
 }
-
-void Boid::render() const { render_triangle(_position, _velocity, 10.f); }
