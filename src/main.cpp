@@ -1,5 +1,6 @@
 
 #include "../lib/Boid.hpp"
+#include "../lib/Flock.hpp"
 #include "../lib/random.hpp"
 #include "../lib/render.hpp"
 #include <iostream>
@@ -7,16 +8,15 @@
 #include <p6/p6.h>
 
 int main() {
-  auto ctx = p6::Context{{1280, 720, "BOIDS"}};
+  auto ctx = p6::Context{{1000, 1000, "BOIDS"}};
   ctx.time_perceived_as_constant_delta_time(60.f);
-  auto radius = 0.05f;
-  std::list<Boid *> objects;
+  auto radius = 0.01f;
+  Flock flock;
   float time, dT, x, y = 0.f;
-
   ctx.imgui = [&]() {
     // Show a simple window
     ImGui::Begin("Parameters");
-    ImGui::SliderFloat("Square size", &radius, 0.f, 1.f);
+    ImGui::SliderFloat("Radius", &radius, 0.f, 1.f);
     ImGui::InputFloat("Time", &time);
     ImGui::InputFloat("dT", &dT);
     ImGui::InputFloat("x", &x);
@@ -26,34 +26,22 @@ int main() {
     // It is very useful to discover all the widgets available in ImGui
     ImGui::ShowDemoWindow();
   };
-  ctx.mouse_pressed = [&](p6::MouseButton) {
-    Boid *nb = new Boid(ctx.mouse());
-    objects.push_back(nb);
-    std::cout << "Mouse Pressed" << std::endl;
-  };
+  ctx.mouse_pressed = [&](p6::MouseButton) { flock.add_boid(ctx.mouse()); };
   ctx.update = [&]() {
     x = ctx.mouse().x;
     y = ctx.mouse().y;
-    ctx.background({0, 1, 0.3, 0});
+    ctx.background({0.1f, 0.75f, 0.1f, 0});
 
     /* PHYSIQUE LOOP*/
     time = ctx.time();
     dT = ctx.delta_time();
 
-    glm::vec2 point_to_seek = ctx.mouse();
-
-    for (Boid *physc : objects) {
-      // Movement update and collision check
-      physc->seek(point_to_seek);
-      physc->update(dT);
-    }
+    flock.update(dT);
 
     /* RENDERING LOOP */
-
-    for (Boid *rendc : objects) {
-      auto center = p6::Center(rendc->_position);
-      render_circle(ctx, center, radius);
-    };
+    display_grass(ctx);
+    display_border(ctx);
+    flock.render(ctx, radius);
   };
 
   ctx.start();

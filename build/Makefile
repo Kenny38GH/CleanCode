@@ -57,10 +57,10 @@ RM = /opt/cmake-3.23.1-linux-x86_64/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/valentin/Bureau/GitHub/P6_CleanCode
+CMAKE_SOURCE_DIR = /home/valentin/Bureau/GitHub/CleanCode
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/valentin/Bureau/GitHub/P6_CleanCode/build
+CMAKE_BINARY_DIR = /home/valentin/Bureau/GitHub/CleanCode/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -132,9 +132,9 @@ install/strip/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/valentin/Bureau/GitHub/P6_CleanCode/build/CMakeFiles /home/valentin/Bureau/GitHub/P6_CleanCode/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/valentin/Bureau/GitHub/CleanCode/build/CMakeFiles /home/valentin/Bureau/GitHub/CleanCode/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/valentin/Bureau/GitHub/P6_CleanCode/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/valentin/Bureau/GitHub/CleanCode/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -158,7 +158,7 @@ preinstall/fast:
 
 # clear depends
 depend:
-	$(CMAKE_COMMAND) -P /home/valentin/Bureau/GitHub/P6_CleanCode/build/CMakeFiles/VerifyGlobs.cmake
+	$(CMAKE_COMMAND) -P /home/valentin/Bureau/GitHub/CleanCode/build/CMakeFiles/VerifyGlobs.cmake
 	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
@@ -342,6 +342,30 @@ src/Boid.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/CleanCode.dir/build.make CMakeFiles/CleanCode.dir/src/Boid.cpp.s
 .PHONY : src/Boid.cpp.s
 
+src/Flock.o: src/Flock.cpp.o
+.PHONY : src/Flock.o
+
+# target to build an object file
+src/Flock.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CleanCode.dir/build.make CMakeFiles/CleanCode.dir/src/Flock.cpp.o
+.PHONY : src/Flock.cpp.o
+
+src/Flock.i: src/Flock.cpp.i
+.PHONY : src/Flock.i
+
+# target to preprocess a source file
+src/Flock.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CleanCode.dir/build.make CMakeFiles/CleanCode.dir/src/Flock.cpp.i
+.PHONY : src/Flock.cpp.i
+
+src/Flock.s: src/Flock.cpp.s
+.PHONY : src/Flock.s
+
+# target to generate assembly for a file
+src/Flock.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CleanCode.dir/build.make CMakeFiles/CleanCode.dir/src/Flock.cpp.s
+.PHONY : src/Flock.cpp.s
+
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
 
@@ -441,6 +465,9 @@ help:
 	@echo "... src/Boid.o"
 	@echo "... src/Boid.i"
 	@echo "... src/Boid.s"
+	@echo "... src/Flock.o"
+	@echo "... src/Flock.i"
+	@echo "... src/Flock.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
@@ -461,7 +488,7 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	$(CMAKE_COMMAND) -P /home/valentin/Bureau/GitHub/P6_CleanCode/build/CMakeFiles/VerifyGlobs.cmake
+	$(CMAKE_COMMAND) -P /home/valentin/Bureau/GitHub/CleanCode/build/CMakeFiles/VerifyGlobs.cmake
 	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

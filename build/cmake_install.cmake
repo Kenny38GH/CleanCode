@@ -1,4 +1,4 @@
-# Install script for directory: /home/valentin/Bureau/GitHub/P6_CleanCode
+# Install script for directory: /home/valentin/Bureau/GitHub/CleanCode
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -39,13 +39,13 @@ endif()
 
 # Set default install directory permissions.
 if(NOT DEFINED CMAKE_OBJDUMP)
-  set(CMAKE_OBJDUMP "/usr/bin/objdump")
+  set(CMAKE_OBJDUMP "/usr/bin/llvm-objdump-10")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/valentin/Bureau/GitHub/P6_CleanCode/build/p6/cmake_install.cmake")
-  include("/home/valentin/Bureau/GitHub/P6_CleanCode/build/lib/cmake_install.cmake")
+  include("/home/valentin/Bureau/GitHub/CleanCode/build/p6/cmake_install.cmake")
+  include("/home/valentin/Bureau/GitHub/CleanCode/build/lib/cmake_install.cmake")
 
 endif()
 
@@ -57,5 +57,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/valentin/Bureau/GitHub/P6_CleanCode/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/valentin/Bureau/GitHub/CleanCode/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

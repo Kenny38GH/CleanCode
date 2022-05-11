@@ -3,14 +3,15 @@
 cmake_policy(SET CMP0009 NEW)
 
 # MY_SOURCES at CMakeLists.txt:23 (file)
-file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "/home/valentin/Bureau/GitHub/P6_CleanCode/src/*")
+file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "/home/valentin/Bureau/GitHub/CleanCode/src/*")
 set(OLD_GLOB
-  "/home/valentin/Bureau/GitHub/P6_CleanCode/src/Boid.cpp"
-  "/home/valentin/Bureau/GitHub/P6_CleanCode/src/main.cpp"
-  "/home/valentin/Bureau/GitHub/P6_CleanCode/src/random.cpp"
-  "/home/valentin/Bureau/GitHub/P6_CleanCode/src/render.cpp"
+  "/home/valentin/Bureau/GitHub/CleanCode/src/Boid.cpp"
+  "/home/valentin/Bureau/GitHub/CleanCode/src/Flock.cpp"
+  "/home/valentin/Bureau/GitHub/CleanCode/src/main.cpp"
+  "/home/valentin/Bureau/GitHub/CleanCode/src/random.cpp"
+  "/home/valentin/Bureau/GitHub/CleanCode/src/render.cpp"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   message("-- GLOB mismatch!")
-  file(TOUCH_NOCREATE "/home/valentin/Bureau/GitHub/P6_CleanCode/build/CMakeFiles/cmake.verify_globs")
+  file(TOUCH_NOCREATE "/home/valentin/Bureau/GitHub/CleanCode/build/CMakeFiles/cmake.verify_globs")
 endif()

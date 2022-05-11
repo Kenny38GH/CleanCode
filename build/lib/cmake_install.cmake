@@ -1,4 +1,4 @@
-# Install script for directory: /home/valentin/Bureau/GitHub/P6_CleanCode/lib
+# Install script for directory: /home/valentin/Bureau/GitHub/CleanCode/lib
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -39,6 +39,6 @@ endif()
 
 # Set default install directory permissions.
 if(NOT DEFINED CMAKE_OBJDUMP)
-  set(CMAKE_OBJDUMP "/usr/bin/objdump")
+  set(CMAKE_OBJDUMP "/usr/bin/llvm-objdump-10")
 endif()
 

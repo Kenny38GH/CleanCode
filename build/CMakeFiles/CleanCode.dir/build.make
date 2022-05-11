@@ -53,10 +53,10 @@ RM = /opt/cmake-3.23.1-linux-x86_64/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/valentin/Bureau/GitHub/P6_CleanCode
+CMAKE_SOURCE_DIR = /home/valentin/Bureau/GitHub/CleanCode
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/valentin/Bureau/GitHub/P6_CleanCode/build
+CMAKE_BINARY_DIR = /home/valentin/Bureau/GitHub/CleanCode/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/CleanCode.dir/depend.make
@@ -72,62 +72,77 @@ include CMakeFiles/CleanCode.dir/flags.make
 CMakeFiles/CleanCode.dir/src/Boid.cpp.o: CMakeFiles/CleanCode.dir/flags.make
 CMakeFiles/CleanCode.dir/src/Boid.cpp.o: ../src/Boid.cpp
 CMakeFiles/CleanCode.dir/src/Boid.cpp.o: CMakeFiles/CleanCode.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/valentin/Bureau/GitHub/P6_CleanCode/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/CleanCode.dir/src/Boid.cpp.o"
-	/usr/bin/clang++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CleanCode.dir/src/Boid.cpp.o -MF CMakeFiles/CleanCode.dir/src/Boid.cpp.o.d -o CMakeFiles/CleanCode.dir/src/Boid.cpp.o -c /home/valentin/Bureau/GitHub/P6_CleanCode/src/Boid.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/valentin/Bureau/GitHub/CleanCode/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/CleanCode.dir/src/Boid.cpp.o"
+	/usr/bin/clang++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CleanCode.dir/src/Boid.cpp.o -MF CMakeFiles/CleanCode.dir/src/Boid.cpp.o.d -o CMakeFiles/CleanCode.dir/src/Boid.cpp.o -c /home/valentin/Bureau/GitHub/CleanCode/src/Boid.cpp
 
 CMakeFiles/CleanCode.dir/src/Boid.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CleanCode.dir/src/Boid.cpp.i"
-	/usr/bin/clang++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/valentin/Bureau/GitHub/P6_CleanCode/src/Boid.cpp > CMakeFiles/CleanCode.dir/src/Boid.cpp.i
+	/usr/bin/clang++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/valentin/Bureau/GitHub/CleanCode/src/Boid.cpp > CMakeFiles/CleanCode.dir/src/Boid.cpp.i
 
 CMakeFiles/CleanCode.dir/src/Boid.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CleanCode.dir/src/Boid.cpp.s"
-	/usr/bin/clang++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/valentin/Bureau/GitHub/P6_CleanCode/src/Boid.cpp -o CMakeFiles/CleanCode.dir/src/Boid.cpp.s
+	/usr/bin/clang++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/valentin/Bureau/GitHub/CleanCode/src/Boid.cpp -o CMakeFiles/CleanCode.dir/src/Boid.cpp.s
+
+CMakeFiles/CleanCode.dir/src/Flock.cpp.o: CMakeFiles/CleanCode.dir/flags.make
+CMakeFiles/CleanCode.dir/src/Flock.cpp.o: ../src/Flock.cpp
+CMakeFiles/CleanCode.dir/src/Flock.cpp.o: CMakeFiles/CleanCode.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/valentin/Bureau/GitHub/CleanCode/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/CleanCode.dir/src/Flock.cpp.o"
+	/usr/bin/clang++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CleanCode.dir/src/Flock.cpp.o -MF CMakeFiles/CleanCode.dir/src/Flock.cpp.o.d -o CMakeFiles/CleanCode.dir/src/Flock.cpp.o -c /home/valentin/Bureau/GitHub/CleanCode/src/Flock.cpp
+
+CMakeFiles/CleanCode.dir/src/Flock.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CleanCode.dir/src/Flock.cpp.i"
+	/usr/bin/clang++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/valentin/Bureau/GitHub/CleanCode/src/Flock.cpp > CMakeFiles/CleanCode.dir/src/Flock.cpp.i
+
+CMakeFiles/CleanCode.dir/src/Flock.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CleanCode.dir/src/Flock.cpp.s"
+	/usr/bin/clang++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/valentin/Bureau/GitHub/CleanCode/src/Flock.cpp -o CMakeFiles/CleanCode.dir/src/Flock.cpp.s
 
 CMakeFiles/CleanCode.dir/src/main.cpp.o: CMakeFiles/CleanCode.dir/flags.make
 CMakeFiles/CleanCode.dir/src/main.cpp.o: ../src/main.cpp
 CMakeFiles/CleanCode.dir/src/main.cpp.o: CMakeFiles/CleanCode.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/valentin/Bureau/GitHub/P6_CleanCode/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/CleanCode.dir/src/main.cpp.o"
-	/usr/bin/clang++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CleanCode.dir/src/main.cpp.o -MF CMakeFiles/CleanCode.dir/src/main.cpp.o.d -o CMakeFiles/CleanCode.dir/src/main.cpp.o -c /home/valentin/Bureau/GitHub/P6_CleanCode/src/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/valentin/Bureau/GitHub/CleanCode/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/CleanCode.dir/src/main.cpp.o"
+	/usr/bin/clang++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CleanCode.dir/src/main.cpp.o -MF CMakeFiles/CleanCode.dir/src/main.cpp.o.d -o CMakeFiles/CleanCode.dir/src/main.cpp.o -c /home/valentin/Bureau/GitHub/CleanCode/src/main.cpp
 
 CMakeFiles/CleanCode.dir/src/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CleanCode.dir/src/main.cpp.i"
-	/usr/bin/clang++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/valentin/Bureau/GitHub/P6_CleanCode/src/main.cpp > CMakeFiles/CleanCode.dir/src/main.cpp.i
+	/usr/bin/clang++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/valentin/Bureau/GitHub/CleanCode/src/main.cpp > CMakeFiles/CleanCode.dir/src/main.cpp.i
 
 CMakeFiles/CleanCode.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CleanCode.dir/src/main.cpp.s"
-	/usr/bin/clang++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/valentin/Bureau/GitHub/P6_CleanCode/src/main.cpp -o CMakeFiles/CleanCode.dir/src/main.cpp.s
+	/usr/bin/clang++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/valentin/Bureau/GitHub/CleanCode/src/main.cpp -o CMakeFiles/CleanCode.dir/src/main.cpp.s
 
 CMakeFiles/CleanCode.dir/src/random.cpp.o: CMakeFiles/CleanCode.dir/flags.make
 CMakeFiles/CleanCode.dir/src/random.cpp.o: ../src/random.cpp
 CMakeFiles/CleanCode.dir/src/random.cpp.o: CMakeFiles/CleanCode.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/valentin/Bureau/GitHub/P6_CleanCode/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/CleanCode.dir/src/random.cpp.o"
-	/usr/bin/clang++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CleanCode.dir/src/random.cpp.o -MF CMakeFiles/CleanCode.dir/src/random.cpp.o.d -o CMakeFiles/CleanCode.dir/src/random.cpp.o -c /home/valentin/Bureau/GitHub/P6_CleanCode/src/random.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/valentin/Bureau/GitHub/CleanCode/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/CleanCode.dir/src/random.cpp.o"
+	/usr/bin/clang++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CleanCode.dir/src/random.cpp.o -MF CMakeFiles/CleanCode.dir/src/random.cpp.o.d -o CMakeFiles/CleanCode.dir/src/random.cpp.o -c /home/valentin/Bureau/GitHub/CleanCode/src/random.cpp
 
 CMakeFiles/CleanCode.dir/src/random.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CleanCode.dir/src/random.cpp.i"
-	/usr/bin/clang++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/valentin/Bureau/GitHub/P6_CleanCode/src/random.cpp > CMakeFiles/CleanCode.dir/src/random.cpp.i
+	/usr/bin/clang++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/valentin/Bureau/GitHub/CleanCode/src/random.cpp > CMakeFiles/CleanCode.dir/src/random.cpp.i
 
 CMakeFiles/CleanCode.dir/src/random.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CleanCode.dir/src/random.cpp.s"
-	/usr/bin/clang++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/valentin/Bureau/GitHub/P6_CleanCode/src/random.cpp -o CMakeFiles/CleanCode.dir/src/random.cpp.s
+	/usr/bin/clang++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/valentin/Bureau/GitHub/CleanCode/src/random.cpp -o CMakeFiles/CleanCode.dir/src/random.cpp.s
 
 CMakeFiles/CleanCode.dir/src/render.cpp.o: CMakeFiles/CleanCode.dir/flags.make
 CMakeFiles/CleanCode.dir/src/render.cpp.o: ../src/render.cpp
 CMakeFiles/CleanCode.dir/src/render.cpp.o: CMakeFiles/CleanCode.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/valentin/Bureau/GitHub/P6_CleanCode/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/CleanCode.dir/src/render.cpp.o"
-	/usr/bin/clang++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CleanCode.dir/src/render.cpp.o -MF CMakeFiles/CleanCode.dir/src/render.cpp.o.d -o CMakeFiles/CleanCode.dir/src/render.cpp.o -c /home/valentin/Bureau/GitHub/P6_CleanCode/src/render.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/valentin/Bureau/GitHub/CleanCode/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/CleanCode.dir/src/render.cpp.o"
+	/usr/bin/clang++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CleanCode.dir/src/render.cpp.o -MF CMakeFiles/CleanCode.dir/src/render.cpp.o.d -o CMakeFiles/CleanCode.dir/src/render.cpp.o -c /home/valentin/Bureau/GitHub/CleanCode/src/render.cpp
 
 CMakeFiles/CleanCode.dir/src/render.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CleanCode.dir/src/render.cpp.i"
-	/usr/bin/clang++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/valentin/Bureau/GitHub/P6_CleanCode/src/render.cpp > CMakeFiles/CleanCode.dir/src/render.cpp.i
+	/usr/bin/clang++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/valentin/Bureau/GitHub/CleanCode/src/render.cpp > CMakeFiles/CleanCode.dir/src/render.cpp.i
 
 CMakeFiles/CleanCode.dir/src/render.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CleanCode.dir/src/render.cpp.s"
-	/usr/bin/clang++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/valentin/Bureau/GitHub/P6_CleanCode/src/render.cpp -o CMakeFiles/CleanCode.dir/src/render.cpp.s
+	/usr/bin/clang++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/valentin/Bureau/GitHub/CleanCode/src/render.cpp -o CMakeFiles/CleanCode.dir/src/render.cpp.s
 
 # Object files for target CleanCode
 CleanCode_OBJECTS = \
 "CMakeFiles/CleanCode.dir/src/Boid.cpp.o" \
+"CMakeFiles/CleanCode.dir/src/Flock.cpp.o" \
 "CMakeFiles/CleanCode.dir/src/main.cpp.o" \
 "CMakeFiles/CleanCode.dir/src/random.cpp.o" \
 "CMakeFiles/CleanCode.dir/src/render.cpp.o"
@@ -136,6 +151,7 @@ CleanCode_OBJECTS = \
 CleanCode_EXTERNAL_OBJECTS =
 
 ../bin/Debug/CleanCode: CMakeFiles/CleanCode.dir/src/Boid.cpp.o
+../bin/Debug/CleanCode: CMakeFiles/CleanCode.dir/src/Flock.cpp.o
 ../bin/Debug/CleanCode: CMakeFiles/CleanCode.dir/src/main.cpp.o
 ../bin/Debug/CleanCode: CMakeFiles/CleanCode.dir/src/random.cpp.o
 ../bin/Debug/CleanCode: CMakeFiles/CleanCode.dir/src/render.cpp.o
@@ -152,7 +168,7 @@ CleanCode_EXTERNAL_OBJECTS =
 ../bin/Debug/CleanCode: /usr/lib/x86_64-linux-gnu/librt.so
 ../bin/Debug/CleanCode: /usr/lib/x86_64-linux-gnu/libm.so
 ../bin/Debug/CleanCode: CMakeFiles/CleanCode.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/valentin/Bureau/GitHub/P6_CleanCode/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable ../bin/Debug/CleanCode"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/valentin/Bureau/GitHub/CleanCode/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable ../bin/Debug/CleanCode"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/CleanCode.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -164,6 +180,6 @@ CMakeFiles/CleanCode.dir/clean:
 .PHONY : CMakeFiles/CleanCode.dir/clean
 
 CMakeFiles/CleanCode.dir/depend:
-	cd /home/valentin/Bureau/GitHub/P6_CleanCode/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/valentin/Bureau/GitHub/P6_CleanCode /home/valentin/Bureau/GitHub/P6_CleanCode /home/valentin/Bureau/GitHub/P6_CleanCode/build /home/valentin/Bureau/GitHub/P6_CleanCode/build /home/valentin/Bureau/GitHub/P6_CleanCode/build/CMakeFiles/CleanCode.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/valentin/Bureau/GitHub/CleanCode/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/valentin/Bureau/GitHub/CleanCode /home/valentin/Bureau/GitHub/CleanCode /home/valentin/Bureau/GitHub/CleanCode/build /home/valentin/Bureau/GitHub/CleanCode/build /home/valentin/Bureau/GitHub/CleanCode/build/CMakeFiles/CleanCode.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/CleanCode.dir/depend
 
