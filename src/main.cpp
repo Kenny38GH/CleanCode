@@ -26,6 +26,8 @@ int main() {
     // It is very useful to discover all the widgets available in ImGui
     ImGui::ShowDemoWindow();
   };
+  flock.add_boid(glm::vec2(primary_rand() * heads_or_tails(),
+                           primary_rand() * heads_or_tails()));
   ctx.mouse_pressed = [&](p6::MouseButton) { flock.add_boid(ctx.mouse()); };
   ctx.update = [&]() {
     x = ctx.mouse().x;
