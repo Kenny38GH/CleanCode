@@ -2,12 +2,18 @@
 #include "../includes/render_shape.hpp"
 
 void display_sheep(const glm::vec3 &position, const glm::vec3 &velocity,
-                   const int &size) {
+                   const int &size, const int cb) {
   // glm::vec3 nspeed = glm::normalize(velocity);
   render_circle(position + velocity, glm::vec3(1.f, 0.5f, 0.5f), size);
-  render_circle(position + velocity * 0.5f, glm::vec3(1.f), size);
-  render_circle(position, glm::vec3(1.f), size);
-  render_circle(position - velocity, glm::vec3(1.f), size);
+  glm::vec3 color = glm::vec3(1.f);
+  if (cb == 2) {
+    color = glm::vec3(0.f, 0.f, 1.f);
+  } else if (cb == 3) {
+    color = glm::vec3(1.f, 0.f, 0.f);
+  }
+  render_circle(position + velocity * 0.5f, color, size);
+  render_circle(position, color, size);
+  render_circle(position - velocity, color, size);
 }
 
 void display_grass() {

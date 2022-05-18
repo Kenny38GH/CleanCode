@@ -7,8 +7,10 @@ file(REMOVE_RECURSE
   "CMakeFiles/CleanCode.dir/src/Flock.cpp.o.d"
   "CMakeFiles/CleanCode.dir/src/main.cpp.o"
   "CMakeFiles/CleanCode.dir/src/main.cpp.o.d"
-  "CMakeFiles/CleanCode.dir/src/render.cpp.o"
-  "CMakeFiles/CleanCode.dir/src/render.cpp.o.d"
+  "CMakeFiles/CleanCode.dir/src/render_assets.cpp.o"
+  "CMakeFiles/CleanCode.dir/src/render_assets.cpp.o.d"
+  "CMakeFiles/CleanCode.dir/src/render_shape.cpp.o"
+  "CMakeFiles/CleanCode.dir/src/render_shape.cpp.o.d"
 )
 
 # Per-language clean rules from dependency scanning.

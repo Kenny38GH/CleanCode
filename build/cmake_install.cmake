@@ -44,7 +44,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/dyokiin/PROG_IMAC2/CleanCode/build/lib/cmake_install.cmake")
+  include("/home/dyokiin/PROG_IMAC2/CleanCode/build/includes/cmake_install.cmake")
 
 endif()
 

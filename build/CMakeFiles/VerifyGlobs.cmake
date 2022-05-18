@@ -8,7 +8,8 @@ set(OLD_GLOB
   "/home/dyokiin/PROG_IMAC2/CleanCode/src/Boid.cpp"
   "/home/dyokiin/PROG_IMAC2/CleanCode/src/Flock.cpp"
   "/home/dyokiin/PROG_IMAC2/CleanCode/src/main.cpp"
-  "/home/dyokiin/PROG_IMAC2/CleanCode/src/render.cpp"
+  "/home/dyokiin/PROG_IMAC2/CleanCode/src/render_assets.cpp"
+  "/home/dyokiin/PROG_IMAC2/CleanCode/src/render_shape.cpp"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   message("-- GLOB mismatch!")

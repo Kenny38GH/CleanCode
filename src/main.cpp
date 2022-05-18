@@ -39,20 +39,12 @@ int main() {
             quit = true;
             break;
           case SDL_MOUSEBUTTONDOWN:
-            last_event = SDL_MOUSEBUTTONDOWN;
-            break;
-          case SDL_MOUSEBUTTONUP:
-            last_event = SDL_MOUSEBUTTONUP;
+            flock.add_boid(glm::vec3(x, y, 0));
             break;
           default:
             break;
           }
         }
-
-        if (last_event == SDL_MOUSEBUTTONDOWN) {
-          flock.add_boid(glm::vec3(x, y, 0));
-        }
-
         /* PHYSIQUE LOOP */
 
         Uint32 current = SDL_GetTicks();

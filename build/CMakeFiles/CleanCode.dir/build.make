@@ -111,26 +111,41 @@ CMakeFiles/CleanCode.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CleanCode.dir/src/main.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dyokiin/PROG_IMAC2/CleanCode/src/main.cpp -o CMakeFiles/CleanCode.dir/src/main.cpp.s
 
-CMakeFiles/CleanCode.dir/src/render.cpp.o: CMakeFiles/CleanCode.dir/flags.make
-CMakeFiles/CleanCode.dir/src/render.cpp.o: ../src/render.cpp
-CMakeFiles/CleanCode.dir/src/render.cpp.o: CMakeFiles/CleanCode.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dyokiin/PROG_IMAC2/CleanCode/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/CleanCode.dir/src/render.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CleanCode.dir/src/render.cpp.o -MF CMakeFiles/CleanCode.dir/src/render.cpp.o.d -o CMakeFiles/CleanCode.dir/src/render.cpp.o -c /home/dyokiin/PROG_IMAC2/CleanCode/src/render.cpp
+CMakeFiles/CleanCode.dir/src/render_assets.cpp.o: CMakeFiles/CleanCode.dir/flags.make
+CMakeFiles/CleanCode.dir/src/render_assets.cpp.o: ../src/render_assets.cpp
+CMakeFiles/CleanCode.dir/src/render_assets.cpp.o: CMakeFiles/CleanCode.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dyokiin/PROG_IMAC2/CleanCode/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/CleanCode.dir/src/render_assets.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CleanCode.dir/src/render_assets.cpp.o -MF CMakeFiles/CleanCode.dir/src/render_assets.cpp.o.d -o CMakeFiles/CleanCode.dir/src/render_assets.cpp.o -c /home/dyokiin/PROG_IMAC2/CleanCode/src/render_assets.cpp
 
-CMakeFiles/CleanCode.dir/src/render.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CleanCode.dir/src/render.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/dyokiin/PROG_IMAC2/CleanCode/src/render.cpp > CMakeFiles/CleanCode.dir/src/render.cpp.i
+CMakeFiles/CleanCode.dir/src/render_assets.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CleanCode.dir/src/render_assets.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/dyokiin/PROG_IMAC2/CleanCode/src/render_assets.cpp > CMakeFiles/CleanCode.dir/src/render_assets.cpp.i
 
-CMakeFiles/CleanCode.dir/src/render.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CleanCode.dir/src/render.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dyokiin/PROG_IMAC2/CleanCode/src/render.cpp -o CMakeFiles/CleanCode.dir/src/render.cpp.s
+CMakeFiles/CleanCode.dir/src/render_assets.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CleanCode.dir/src/render_assets.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dyokiin/PROG_IMAC2/CleanCode/src/render_assets.cpp -o CMakeFiles/CleanCode.dir/src/render_assets.cpp.s
+
+CMakeFiles/CleanCode.dir/src/render_shape.cpp.o: CMakeFiles/CleanCode.dir/flags.make
+CMakeFiles/CleanCode.dir/src/render_shape.cpp.o: ../src/render_shape.cpp
+CMakeFiles/CleanCode.dir/src/render_shape.cpp.o: CMakeFiles/CleanCode.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dyokiin/PROG_IMAC2/CleanCode/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/CleanCode.dir/src/render_shape.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CleanCode.dir/src/render_shape.cpp.o -MF CMakeFiles/CleanCode.dir/src/render_shape.cpp.o.d -o CMakeFiles/CleanCode.dir/src/render_shape.cpp.o -c /home/dyokiin/PROG_IMAC2/CleanCode/src/render_shape.cpp
+
+CMakeFiles/CleanCode.dir/src/render_shape.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CleanCode.dir/src/render_shape.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/dyokiin/PROG_IMAC2/CleanCode/src/render_shape.cpp > CMakeFiles/CleanCode.dir/src/render_shape.cpp.i
+
+CMakeFiles/CleanCode.dir/src/render_shape.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CleanCode.dir/src/render_shape.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dyokiin/PROG_IMAC2/CleanCode/src/render_shape.cpp -o CMakeFiles/CleanCode.dir/src/render_shape.cpp.s
 
 # Object files for target CleanCode
 CleanCode_OBJECTS = \
 "CMakeFiles/CleanCode.dir/src/Boid.cpp.o" \
 "CMakeFiles/CleanCode.dir/src/Flock.cpp.o" \
 "CMakeFiles/CleanCode.dir/src/main.cpp.o" \
-"CMakeFiles/CleanCode.dir/src/render.cpp.o"
+"CMakeFiles/CleanCode.dir/src/render_assets.cpp.o" \
+"CMakeFiles/CleanCode.dir/src/render_shape.cpp.o"
 
 # External object files for target CleanCode
 CleanCode_EXTERNAL_OBJECTS =
@@ -138,10 +153,11 @@ CleanCode_EXTERNAL_OBJECTS =
 ../bin/CleanCode: CMakeFiles/CleanCode.dir/src/Boid.cpp.o
 ../bin/CleanCode: CMakeFiles/CleanCode.dir/src/Flock.cpp.o
 ../bin/CleanCode: CMakeFiles/CleanCode.dir/src/main.cpp.o
-../bin/CleanCode: CMakeFiles/CleanCode.dir/src/render.cpp.o
+../bin/CleanCode: CMakeFiles/CleanCode.dir/src/render_assets.cpp.o
+../bin/CleanCode: CMakeFiles/CleanCode.dir/src/render_shape.cpp.o
 ../bin/CleanCode: CMakeFiles/CleanCode.dir/build.make
 ../bin/CleanCode: CMakeFiles/CleanCode.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/dyokiin/PROG_IMAC2/CleanCode/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable ../bin/CleanCode"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/dyokiin/PROG_IMAC2/CleanCode/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable ../bin/CleanCode"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/CleanCode.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

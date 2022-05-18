@@ -221,13 +221,13 @@ PKG_CONFIG_ARGN:STRING=
 PKG_CONFIG_EXECUTABLE:FILEPATH=/usr/bin/pkg-config
 
 //Value Computed by CMake
-lib_BINARY_DIR:STATIC=/home/dyokiin/PROG_IMAC2/CleanCode/build/lib
+includes_BINARY_DIR:STATIC=/home/dyokiin/PROG_IMAC2/CleanCode/build/includes
 
 //Value Computed by CMake
-lib_IS_TOP_LEVEL:STATIC=OFF
+includes_IS_TOP_LEVEL:STATIC=OFF
 
 //Value Computed by CMake
-lib_SOURCE_DIR:STATIC=/home/dyokiin/PROG_IMAC2/CleanCode/lib
+includes_SOURCE_DIR:STATIC=/home/dyokiin/PROG_IMAC2/CleanCode/includes
 
 //Path to a library.
 pkgcfg_lib_GLEW_GL:FILEPATH=/usr/lib/x86_64-linux-gnu/libGL.so

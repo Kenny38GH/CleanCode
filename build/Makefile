@@ -202,29 +202,53 @@ src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/CleanCode.dir/build.make CMakeFiles/CleanCode.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
-src/render.o: src/render.cpp.o
-.PHONY : src/render.o
+src/render_assets.o: src/render_assets.cpp.o
+.PHONY : src/render_assets.o
 
 # target to build an object file
-src/render.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CleanCode.dir/build.make CMakeFiles/CleanCode.dir/src/render.cpp.o
-.PHONY : src/render.cpp.o
+src/render_assets.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CleanCode.dir/build.make CMakeFiles/CleanCode.dir/src/render_assets.cpp.o
+.PHONY : src/render_assets.cpp.o
 
-src/render.i: src/render.cpp.i
-.PHONY : src/render.i
+src/render_assets.i: src/render_assets.cpp.i
+.PHONY : src/render_assets.i
 
 # target to preprocess a source file
-src/render.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CleanCode.dir/build.make CMakeFiles/CleanCode.dir/src/render.cpp.i
-.PHONY : src/render.cpp.i
+src/render_assets.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CleanCode.dir/build.make CMakeFiles/CleanCode.dir/src/render_assets.cpp.i
+.PHONY : src/render_assets.cpp.i
 
-src/render.s: src/render.cpp.s
-.PHONY : src/render.s
+src/render_assets.s: src/render_assets.cpp.s
+.PHONY : src/render_assets.s
 
 # target to generate assembly for a file
-src/render.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CleanCode.dir/build.make CMakeFiles/CleanCode.dir/src/render.cpp.s
-.PHONY : src/render.cpp.s
+src/render_assets.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CleanCode.dir/build.make CMakeFiles/CleanCode.dir/src/render_assets.cpp.s
+.PHONY : src/render_assets.cpp.s
+
+src/render_shape.o: src/render_shape.cpp.o
+.PHONY : src/render_shape.o
+
+# target to build an object file
+src/render_shape.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CleanCode.dir/build.make CMakeFiles/CleanCode.dir/src/render_shape.cpp.o
+.PHONY : src/render_shape.cpp.o
+
+src/render_shape.i: src/render_shape.cpp.i
+.PHONY : src/render_shape.i
+
+# target to preprocess a source file
+src/render_shape.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CleanCode.dir/build.make CMakeFiles/CleanCode.dir/src/render_shape.cpp.i
+.PHONY : src/render_shape.cpp.i
+
+src/render_shape.s: src/render_shape.cpp.s
+.PHONY : src/render_shape.s
+
+# target to generate assembly for a file
+src/render_shape.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CleanCode.dir/build.make CMakeFiles/CleanCode.dir/src/render_shape.cpp.s
+.PHONY : src/render_shape.cpp.s
 
 # Help Target
 help:
@@ -244,9 +268,12 @@ help:
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
-	@echo "... src/render.o"
-	@echo "... src/render.i"
-	@echo "... src/render.s"
+	@echo "... src/render_assets.o"
+	@echo "... src/render_assets.i"
+	@echo "... src/render_assets.s"
+	@echo "... src/render_shape.o"
+	@echo "... src/render_shape.i"
+	@echo "... src/render_shape.s"
 .PHONY : help
 
 

@@ -64,32 +64,32 @@ CMAKE_BINARY_DIR = /home/dyokiin/PROG_IMAC2/CleanCode/build
 
 # The main recursive "all" target.
 all: CMakeFiles/CleanCode.dir/all
-all: lib/all
+all: includes/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
-preinstall: lib/preinstall
+preinstall: includes/preinstall
 .PHONY : preinstall
 
 # The main recursive "clean" target.
 clean: CMakeFiles/CleanCode.dir/clean
-clean: lib/clean
+clean: includes/clean
 .PHONY : clean
 
 #=============================================================================
-# Directory level rules for directory lib
+# Directory level rules for directory includes
 
 # Recursive "all" directory target.
-lib/all:
-.PHONY : lib/all
+includes/all:
+.PHONY : includes/all
 
 # Recursive "preinstall" directory target.
-lib/preinstall:
-.PHONY : lib/preinstall
+includes/preinstall:
+.PHONY : includes/preinstall
 
 # Recursive "clean" directory target.
-lib/clean:
-.PHONY : lib/clean
+includes/clean:
+.PHONY : includes/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/CleanCode.dir
@@ -98,12 +98,12 @@ lib/clean:
 CMakeFiles/CleanCode.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/CleanCode.dir/build.make CMakeFiles/CleanCode.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/CleanCode.dir/build.make CMakeFiles/CleanCode.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/dyokiin/PROG_IMAC2/CleanCode/build/CMakeFiles --progress-num=1,2,3,4,5 "Built target CleanCode"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/dyokiin/PROG_IMAC2/CleanCode/build/CMakeFiles --progress-num=1,2,3,4,5,6 "Built target CleanCode"
 .PHONY : CMakeFiles/CleanCode.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/CleanCode.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/dyokiin/PROG_IMAC2/CleanCode/build/CMakeFiles 5
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/dyokiin/PROG_IMAC2/CleanCode/build/CMakeFiles 6
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/CleanCode.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/dyokiin/PROG_IMAC2/CleanCode/build/CMakeFiles 0
 .PHONY : CMakeFiles/CleanCode.dir/rule

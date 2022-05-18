@@ -1,5 +1,5 @@
 /home/dyokiin/PROG_IMAC2/CleanCode/build/CMakeFiles/CleanCode.dir
 /home/dyokiin/PROG_IMAC2/CleanCode/build/CMakeFiles/edit_cache.dir
 /home/dyokiin/PROG_IMAC2/CleanCode/build/CMakeFiles/rebuild_cache.dir
-/home/dyokiin/PROG_IMAC2/CleanCode/build/lib/CMakeFiles/edit_cache.dir
-/home/dyokiin/PROG_IMAC2/CleanCode/build/lib/CMakeFiles/rebuild_cache.dir
+/home/dyokiin/PROG_IMAC2/CleanCode/build/includes/CMakeFiles/edit_cache.dir
+/home/dyokiin/PROG_IMAC2/CleanCode/build/includes/CMakeFiles/rebuild_cache.dir

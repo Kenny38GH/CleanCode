@@ -23,7 +23,7 @@ void Boid::flock(const std::vector<Boid *> &nearest, const float &dT) {
   glm::vec3 total_velocity(0);
   for (auto &n : nearest) {
     total_velocity += n->_velocity;
-    if (length(n->_position - _position) < _view_range * 0.75) {
+    if (length(n->_position - _position) < _view_range / 2) {
       flee(n->_position);
     } else {
       seek(n->_position);
@@ -101,4 +101,18 @@ const glm::vec3 Boid::update_behaviour(std::vector<Boid *> nearests) {
   return target;
 }
 
-void Boid::render() const { display_sheep(_position, _velocity, 8.f); }
+void Boid::render() const {
+  switch (_current_behaviour) {
+  case BEHAVIOUR::SEEK:
+    display_sheep(_position, _velocity, 8.f, 1);
+    break;
+  case BEHAVIOUR::FLOCK:
+    display_sheep(_position, _velocity, 8.f, 2);
+    break;
+  case BEHAVIOUR::FLEE:
+    display_sheep(_position, _velocity, 8.f, 3);
+    break;
+  default:
+    break;
+  }
+}

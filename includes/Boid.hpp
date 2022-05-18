@@ -6,13 +6,13 @@
 #include <iostream>
 #include <vector>
 
-#define MAX_SPEED 12.0f
+#define MAX_SPEED 15.0f
 #define MAX_ACCEL 40.0f
 
 #define BASE_SPEED 5.0f
 #define BASE_ACCEL 0.f
 #define BASE_VIEW_RANGE 60
-#define BASE_VIEW_ANGLE 270
+#define BASE_VIEW_ANGLE 100
 
 enum class BEHAVIOUR : int { SEEK, FLEE, FLOCK };
 
