@@ -13,6 +13,7 @@ int main() {
   auto radius = 0.01f;
   Flock flock;
   float time, dT, x, y = 0.f;
+  glm::vec2 target = glm::vec2(0);
   ctx.imgui = [&]() {
     // Show a simple window
     ImGui::Begin("Parameters");
@@ -28,7 +29,10 @@ int main() {
   };
   flock.add_boid(glm::vec2(primary_rand() * heads_or_tails(),
                            primary_rand() * heads_or_tails()));
-  ctx.mouse_pressed = [&](p6::MouseButton) { flock.add_boid(ctx.mouse()); };
+  ctx.mouse_pressed = [&](p6::MouseButton) {
+    flock.add_boid(ctx.mouse());
+    target = glm::vec2(ctx.mouse().x, ctx.mouse().y);
+  };
   ctx.update = [&]() {
     x = ctx.mouse().x;
     y = ctx.mouse().y;
@@ -38,7 +42,7 @@ int main() {
     time = ctx.time();
     dT = ctx.delta_time();
 
-    flock.update(dT);
+    flock.update(dT, target);
 
     /* RENDERING LOOP */
     display_grass(ctx);

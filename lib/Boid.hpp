@@ -12,6 +12,8 @@
 
 enum class BEHAVIOUR : int { SEEK, FLEE, FLOCK };
 
+class Doig;
+
 class Boid {
 private:
   glm::vec2 _velocity;
@@ -21,6 +23,8 @@ private:
 
   float _view_range;
   float _view_angle;
+
+  friend class Doig;
 
 public:
   Boid() = default;
@@ -38,9 +42,12 @@ public:
   void flock(const std::vector<Boid *> &nearest, const float &dT);
 
   bool sees(const Boid &boid) const;
+  bool sees(const Doig &doig) const;
 
-  void update(const float &dT, const std::vector<Boid *> &nearests);
-  const glm::vec2 update_behaviour(std::vector<Boid *> nearests);
+  void update(const float &dT, const std::vector<Boid *> &nearests,
+              const Doig &doig);
+  const glm::vec2 update_behaviour(std::vector<Boid *> nearests,
+                                   const Doig &doig);
 
   void render(p6::Context &ctx, float &radius);
 };

@@ -1,4 +1,5 @@
 #include "../lib/Boid.hpp"
+#include "../lib/Doig.hpp"
 
 void Boid::seek(const glm::vec2 &target) {
   glm::vec2 desired = target - _position;
@@ -38,12 +39,10 @@ void Boid::flock(const std::vector<Boid *> &nearest, const float &dT) {
 bool Boid::sees(const Boid &boid) const {
   if (&boid != this) {
     glm::vec2 dist = boid._position - _position;
-    std::cout << "dist: " << dist.x << " " << dist.y << std::endl;
 
     float vec_dot = glm::dot(_velocity, dist);
     float angle = abs((vec_dot / (glm::length(_velocity) * glm::length(dist))) *
                       180 / 3.141592f);
-    std::cout << "angle: " << angle << std::endl;
     if ((angle < (360 - _view_angle)) && (glm::length(dist) < _view_range)) {
       return true;
     }
@@ -51,9 +50,12 @@ bool Boid::sees(const Boid &boid) const {
   }
 }
 
-void Boid::update(const float &dT, const std::vector<Boid *> &nearests) {
+bool Boid::sees(const Doig &doig) const { return sees(Boid(doig._position)); }
 
-  glm::vec2 target = update_behaviour(nearests);
+void Boid::update(const float &dT, const std::vector<Boid *> &nearests,
+                  const Doig &doig) {
+
+  glm::vec2 target = update_behaviour(nearests, doig);
 
   switch (_current_behaviour) {
   case BEHAVIOUR::SEEK:
@@ -76,13 +78,19 @@ void Boid::update(const float &dT, const std::vector<Boid *> &nearests) {
   _acceleration -= _acceleration * 0.01f; // ARBITRAIRE
 }
 
-const glm::vec2 Boid::update_behaviour(std::vector<Boid *> nearests) {
+const glm::vec2 Boid::update_behaviour(std::vector<Boid *> nearests,
+                                       const Doig &doig) {
 
   glm::vec2 target = _position + 1.f * _velocity;
   _current_behaviour = BEHAVIOUR::SEEK;
 
   if (nearests.size() > 1) {
     _current_behaviour = BEHAVIOUR::FLOCK;
+  }
+
+  if (sees(doig)) {
+    _current_behaviour = BEHAVIOUR::FLEE;
+    target = doig._position;
   }
 
   if (_position.x < -0.9 && _velocity.x <= 0) {
