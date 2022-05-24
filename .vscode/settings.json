@@ -57,6 +57,9 @@
         "bitset": "cpp",
         "codecvt": "cpp",
         "iomanip": "cpp",
-        "variant": "cpp"
+        "variant": "cpp",
+        "condition_variable": "cpp",
+        "csignal": "cpp",
+        "mutex": "cpp"
     }
 }

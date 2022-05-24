@@ -2,19 +2,19 @@
 
 void Boid::seek(const glm::vec2 &target) {
   glm::vec2 desired = target - _position;
-  desired = glm::normalize(desired) * MAX_SPEED;
+  desired = glm::normalize(desired) * _max_speed;
   glm::vec2 steer = desired - _velocity;
 
-  if (glm::length(_acceleration + steer) < MAX_ACCEL)
+  if (glm::length(_acceleration + steer) < _max_speed * 2)
     _acceleration += steer;
 }
 
 void Boid::flee(const glm::vec2 &target) {
   glm::vec2 desired = target - _position;
-  desired = glm::normalize(desired) * MAX_SPEED;
+  desired = glm::normalize(desired) * _max_speed;
   glm::vec2 steer = -desired - _velocity;
 
-  if (glm::length(_acceleration + steer) <= MAX_ACCEL)
+  if (glm::length(_acceleration + steer) <= _max_speed * 2)
     _acceleration += steer;
 }
 
@@ -36,19 +36,19 @@ void Boid::flock(const std::vector<Boid *> &nearest, const float &dT) {
 }
 
 bool Boid::sees(const Boid &boid) const {
-  if (&boid != this) {
-    glm::vec2 dist = boid._position - _position;
-    std::cout << "dist: " << dist.x << " " << dist.y << std::endl;
-
+  glm::vec2 dist = boid._position - _position;
+  if (length(dist) < length(glm::vec2(_view_range)) &&
+      (length(dist) > length(glm::vec2(0.01f)))) {
     float vec_dot = glm::dot(_velocity, dist);
     float angle = abs((vec_dot / (glm::length(_velocity) * glm::length(dist))) *
                       180 / 3.141592f);
-    std::cout << "angle: " << angle << std::endl;
-    if ((angle < (360 - _view_angle)) && (glm::length(dist) < _view_range)) {
+
+    if ((angle < (_view_angle))) {
       return true;
     }
     return false;
   }
+  return 0;
 }
 
 void Boid::update(const float &dT, const std::vector<Boid *> &nearests) {
@@ -67,9 +67,9 @@ void Boid::update(const float &dT, const std::vector<Boid *> &nearests) {
     break;
   }
 
-  if (glm::length(_velocity + _acceleration * dT) < MAX_SPEED) {
-    _velocity.x += _acceleration.x * dT;
-    _velocity.y += _acceleration.y * dT;
+  if (glm::length(_velocity + _acceleration * dT) < _max_speed) {
+    _velocity.x += _acceleration.x * dT * 0.1f;
+    _velocity.y += _acceleration.y * dT * 0.1f;
   }
 
   _position += (_velocity * BASE_SPEED) * dT;
@@ -110,5 +110,5 @@ const glm::vec2 Boid::update_behaviour(std::vector<Boid *> nearests) {
 }
 
 void Boid::render(p6::Context &ctx, float &radius) {
-  display_sheep(ctx, _position, _velocity, radius);
+  display_sheep(ctx, _position, _velocity, radius, _max_speed);
 }

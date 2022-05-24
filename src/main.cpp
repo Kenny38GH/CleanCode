@@ -1,53 +1,123 @@
-
 #include "../lib/Boid.hpp"
 #include "../lib/Flock.hpp"
+#include "../lib/Game.hpp"
 #include "../lib/random.hpp"
 #include "../lib/render.hpp"
 #include <iostream>
 #include <list>
 #include <p6/p6.h>
+#include <string>
 
 int main() {
-  auto ctx = p6::Context{{1000, 1000, "BOIDS"}};
+  auto ctx = p6::Context{{1000, 1000, "MOUMOUT PARTY"}};
   ctx.time_perceived_as_constant_delta_time(60.f);
-  auto radius = 0.01f;
+  auto radius = 0.03f;
+  float max_speed = 0.1f;
   Flock flock;
+  Game game;
   float time, dT, x, y = 0.f;
+
+  float ImGuiWidth = 500;
+  float ImGuiHight = 200;
+  int nb_moutmout = 0;
+  bool mode_choosen = false;
   ctx.imgui = [&]() {
     // Show a simple window
-    ImGui::Begin("Parameters");
-    ImGui::SliderFloat("Radius", &radius, 0.f, 1.f);
-    ImGui::InputFloat("Time", &time);
-    ImGui::InputFloat("dT", &dT);
-    ImGui::InputFloat("x", &x);
-    ImGui::InputFloat("y", &y);
+
+    ImGui::Begin("Menu des paramètres");
+    ImGui::SetWindowSize(ImVec2((float)ImGuiWidth, (float)ImGuiHight));
+    ImGui::StyleColorsLight();
+
+    if (ImGui::Button("Facile") && mode_choosen == false) {
+      game.activate_easy_mode(&flock, max_speed);
+      mode_choosen = true;
+    }
+    ImGui::SameLine();
+    if (ImGui::Button("Normal") && mode_choosen == false) {
+      game.activate_normal_mode(&flock, max_speed);
+      mode_choosen = true;
+    }
+    ImGui::SameLine();
+    if (ImGui::Button("Difficile") && mode_choosen == false) {
+      game.activate_hard_mode(&flock, max_speed);
+      mode_choosen = true;
+    }
+    // ImGui::SameLine();
+    ImGui::InputInt("Nombre de moutmouts", &nb_moutmout);
+
+    ImGui::SliderFloat("Taille des moutons", &radius, 0.f, 1.f);
+    ImGui::SliderFloat("Vitesse MAXIMALE", &max_speed, 0.1f, 0.3f);
+    if (ImGui::Button("Démarrer la partie !") && mode_choosen == true) {
+      if (ctx.is_paused()) {
+        ctx.resume();
+      }
+      ctx.mouse_pressed = [&](p6::MouseButton) {
+        flock.add_boid(ctx.mouse(), max_speed);
+      };
+      ctx.update = [&]() {
+        x = ctx.mouse().x;
+        y = ctx.mouse().y;
+        ctx.background({0.1f, 0.75f, 0.1f, 0});
+
+        /* PHYSIQUE LOOP*/
+        time = ctx.time();
+        dT = ctx.delta_time();
+
+        flock.update(dT);
+        nb_moutmout = flock.get_size();
+
+        /* RENDERING LOOP */
+        display_grass(ctx);
+        display_border(ctx);
+
+        flock.render(ctx, radius);
+      };
+    }
+    ImGui::SameLine();
+    if (ImGui::Button("Redemarrer la partie!") && mode_choosen == true) {
+      flock.reset();
+      mode_choosen = false;
+      ctx.update = [&]() {
+        x = ctx.mouse().x;
+        y = ctx.mouse().y;
+        ctx.background({0.1f, 0.75f, 0.1f, 0});
+
+        /* PHYSIQUE LOOP*/
+        time = ctx.time();
+        dT = ctx.delta_time();
+
+        flock.update(dT);
+
+        /* RENDERING LOOP */
+        display_grass(ctx);
+        display_border(ctx);
+        ctx.fill = p6::NamedColor::White;
+        ctx.text_size = 0.04f;
+        auto topleftcorner = p6::TopLeftCorner(glm::vec2(-0.7f, 0.1f));
+        ctx.text(u"Choisi tes options", topleftcorner);
+        topleftcorner = p6::TopLeftCorner(glm::vec2(-0.1f, -0.0f));
+        ctx.text(u"et", topleftcorner);
+        topleftcorner = p6::TopLeftCorner(glm::vec2(-0.7f, -0.1f));
+        ctx.text(u"Demarre la partie !", topleftcorner);
+      };
+    }
     ImGui::End();
-    // Show the official ImGui demo window
-    // It is very useful to discover all the widgets available in ImGui
-    ImGui::ShowDemoWindow();
   };
-  flock.add_boid(glm::vec2(primary_rand() * heads_or_tails(),
-                           primary_rand() * heads_or_tails()));
-  ctx.mouse_pressed = [&](p6::MouseButton) { flock.add_boid(ctx.mouse()); };
-  ctx.update = [&]() {
-    x = ctx.mouse().x;
-    y = ctx.mouse().y;
-    ctx.background({0.1f, 0.75f, 0.1f, 0});
 
-    /* PHYSIQUE LOOP*/
-    time = ctx.time();
-    dT = ctx.delta_time();
+  ctx.background({0.1f, 0.75f, 0.1f, 0});
 
-    flock.update(dT);
-
-    /* RENDERING LOOP */
-    display_grass(ctx);
-    display_border(ctx);
-    flock.render(ctx, radius);
-  };
+  display_grass(ctx);
+  display_border(ctx);
+  ctx.fill = p6::NamedColor::White;
+  ctx.text_size = 0.04f;
+  auto topleftcorner = p6::TopLeftCorner(glm::vec2(-0.7f, 0.1f));
+  ctx.text(u"Choisi tes options", topleftcorner);
+  topleftcorner = p6::TopLeftCorner(glm::vec2(-0.1f, -0.0f));
+  ctx.text(u"et", topleftcorner);
+  topleftcorner = p6::TopLeftCorner(glm::vec2(-0.7f, -0.1f));
+  ctx.text(u"Demarre la partie !", topleftcorner);
 
   ctx.start();
-
   /* ZONE DE TEST DES FONCTIONS RANDOM */
   std::cout << "/* ZONE DE TEST DES FONCTIONS RANDOM */" << std::endl;
 
@@ -69,4 +139,9 @@ int main() {
                "succès p | Binomial law res : "
             << binomial_law(10, 8, 0.9f) << std::endl;
   std::cout << "Poisson law res: " << poissrnd(0.5) << std::endl;
+
+  for (int i = 0; i < 1; i++) {
+    std::cout << "Loi Beta pour la" << i << "eme fois :" << loiBeta(5.f, 1.f)
+              << std::endl;
+  }
 };

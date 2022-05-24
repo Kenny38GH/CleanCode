@@ -366,6 +366,30 @@ src/Flock.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/CleanCode.dir/build.make CMakeFiles/CleanCode.dir/src/Flock.cpp.s
 .PHONY : src/Flock.cpp.s
 
+src/Game.o: src/Game.cpp.o
+.PHONY : src/Game.o
+
+# target to build an object file
+src/Game.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CleanCode.dir/build.make CMakeFiles/CleanCode.dir/src/Game.cpp.o
+.PHONY : src/Game.cpp.o
+
+src/Game.i: src/Game.cpp.i
+.PHONY : src/Game.i
+
+# target to preprocess a source file
+src/Game.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CleanCode.dir/build.make CMakeFiles/CleanCode.dir/src/Game.cpp.i
+.PHONY : src/Game.cpp.i
+
+src/Game.s: src/Game.cpp.s
+.PHONY : src/Game.s
+
+# target to generate assembly for a file
+src/Game.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CleanCode.dir/build.make CMakeFiles/CleanCode.dir/src/Game.cpp.s
+.PHONY : src/Game.cpp.s
+
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
 
@@ -468,6 +492,9 @@ help:
 	@echo "... src/Flock.o"
 	@echo "... src/Flock.i"
 	@echo "... src/Flock.s"
+	@echo "... src/Game.o"
+	@echo "... src/Game.i"
+	@echo "... src/Game.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

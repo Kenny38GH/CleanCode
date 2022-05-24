@@ -2,13 +2,13 @@
 #include "random.hpp"
 #include "render.hpp"
 
-#define MAX_SPEED 0.5f
-#define MAX_ACCEL 1.f
+#define MAX_SPEED 0.1f
+#define MAX_ACCEL 0.2f
 
 #define BASE_SPEED 0.05f
 #define BASE_ACCEL 0.f
-#define BASE_VIEW_RANGE 0.3f
-#define BASE_VIEW_ANGLE 0.02f
+#define BASE_VIEW_RANGE 0.5f
+#define BASE_VIEW_ANGLE 20.f
 
 enum class BEHAVIOUR : int { SEEK, FLEE, FLOCK };
 
@@ -16,6 +16,7 @@ class Boid {
 private:
   glm::vec2 _velocity;
   glm::vec2 _acceleration;
+  float _max_speed;
 
   BEHAVIOUR _current_behaviour;
 
@@ -25,8 +26,8 @@ private:
 public:
   Boid() = default;
   glm::vec2 _position;
-  explicit Boid(const glm::vec2 position)
-      : _position(position),
+  explicit Boid(const glm::vec2 position, float speed)
+      : _position(position), _max_speed(speed),
         _velocity(glm::vec2(BASE_SPEED * primary_rand() * heads_or_tails(),
                             BASE_SPEED * primary_rand() * heads_or_tails())),
         _acceleration(BASE_ACCEL), _current_behaviour(BEHAVIOUR::SEEK),

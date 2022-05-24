@@ -10,6 +10,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/valentin/Bureau/GitHub/CleanCode/src/Boid.cpp" "CMakeFiles/CleanCode.dir/src/Boid.cpp.o" "gcc" "CMakeFiles/CleanCode.dir/src/Boid.cpp.o.d"
   "/home/valentin/Bureau/GitHub/CleanCode/src/Flock.cpp" "CMakeFiles/CleanCode.dir/src/Flock.cpp.o" "gcc" "CMakeFiles/CleanCode.dir/src/Flock.cpp.o.d"
+  "/home/valentin/Bureau/GitHub/CleanCode/src/Game.cpp" "CMakeFiles/CleanCode.dir/src/Game.cpp.o" "gcc" "CMakeFiles/CleanCode.dir/src/Game.cpp.o.d"
   "/home/valentin/Bureau/GitHub/CleanCode/src/main.cpp" "CMakeFiles/CleanCode.dir/src/main.cpp.o" "gcc" "CMakeFiles/CleanCode.dir/src/main.cpp.o.d"
   "/home/valentin/Bureau/GitHub/CleanCode/src/random.cpp" "CMakeFiles/CleanCode.dir/src/random.cpp.o" "gcc" "CMakeFiles/CleanCode.dir/src/random.cpp.o.d"
   "/home/valentin/Bureau/GitHub/CleanCode/src/render.cpp" "CMakeFiles/CleanCode.dir/src/render.cpp.o" "gcc" "CMakeFiles/CleanCode.dir/src/render.cpp.o.d"

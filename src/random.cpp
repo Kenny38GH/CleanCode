@@ -16,6 +16,7 @@ int number_with_random_law(int number_of_probabilities) {
   for (int i = 0; i < space.size(); i++) {
     x += space[i];
     if (x >= k) {
+      std::cout << i << std::endl;
       return i;
     }
   }
@@ -43,6 +44,24 @@ int number_with_custom_law(std::vector<float> custom_law) {
 
 float accidental_phenomena(float lambda) {
   return (-1 / lambda) * log(primary_rand());
+}
+
+// loi Bêta centrée sur [0,1]
+float loiBeta(float n, float m) {
+  float Z1 = 0.f;
+  float Z2 = 0.f;
+  for (int i = 0; i < n; i++) {
+    Z1 += accidental_phenomena(1);
+  }
+  for (int i = 0; i < m; i++) {
+    Z2 += accidental_phenomena(1);
+  }
+  return Z1 / (Z1 + Z2);
+};
+
+// loi beta de parametre n et m, centrée sur b, étandu sur a
+float loiBetaDecentree(float n, float m, float a, float b) {
+  return a * loiBeta(n, m) + (b - a / 2);
 }
 
 float bernoulli(float p) {

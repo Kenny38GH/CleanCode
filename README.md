@@ -13,7 +13,7 @@ This game has been made as project for Mathematics and Object Program class
 If want to compile the project you will differents libs and tools that our project is dependent:
 
 - OpenGL
-- STL/SDL2/GLM
+- P6
 - CMake
 
 Then you will need to clone the git:
