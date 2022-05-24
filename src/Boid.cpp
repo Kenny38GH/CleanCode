@@ -1,4 +1,5 @@
 #include "../lib/Boid.hpp"
+#include "../lib/Doig.hpp"
 
 void Boid::seek(const glm::vec2 &target) {
   glm::vec2 desired = target - _position;
@@ -14,7 +15,7 @@ void Boid::flee(const glm::vec2 &target) {
   desired = glm::normalize(desired) * _max_speed;
   glm::vec2 steer = -desired - _velocity;
 
-  if (glm::length(_acceleration + steer) <= _max_speed * 2)
+  if (glm::length(_acceleration + steer) <= _max_speed * 5)
     _acceleration += steer;
 }
 
@@ -37,8 +38,7 @@ void Boid::flock(const std::vector<Boid *> &nearest, const float &dT) {
 
 bool Boid::sees(const Boid &boid) const {
   glm::vec2 dist = boid._position - _position;
-  if (length(dist) < length(glm::vec2(_view_range)) &&
-      (length(dist) > length(glm::vec2(0.01f)))) {
+  if (true) {
     float vec_dot = glm::dot(_velocity, dist);
     float angle = abs((vec_dot / (glm::length(_velocity) * glm::length(dist))) *
                       180 / 3.141592f);
@@ -51,9 +51,12 @@ bool Boid::sees(const Boid &boid) const {
   return 0;
 }
 
-void Boid::update(const float &dT, const std::vector<Boid *> &nearests) {
+bool Boid::sees(const Doig &doig) const { return sees(Boid(doig._position)); }
 
-  glm::vec2 target = update_behaviour(nearests);
+void Boid::update(const float &dT, const std::vector<Boid *> &nearests,
+                  const Doig &doig, glm::vec2 position_of_success) {
+
+  glm::vec2 target = update_behaviour(nearests, doig);
 
   switch (_current_behaviour) {
   case BEHAVIOUR::SEEK:
@@ -72,17 +75,25 @@ void Boid::update(const float &dT, const std::vector<Boid *> &nearests) {
     _velocity.y += _acceleration.y * dT * 0.1f;
   }
 
-  _position += (_velocity * BASE_SPEED) * dT;
-  _acceleration -= _acceleration * 0.01f; // ARBITRAIRE
+  _position += (_velocity * BASE_SPEED) * 0.1f;
+  _acceleration -= _acceleration * 0.3f; // ARBITRAIRE
+
+  check_success(position_of_success);
 }
 
-const glm::vec2 Boid::update_behaviour(std::vector<Boid *> nearests) {
+const glm::vec2 Boid::update_behaviour(std::vector<Boid *> nearests,
+                                       const Doig &doig) {
 
   glm::vec2 target = _position + 1.f * _velocity;
   _current_behaviour = BEHAVIOUR::SEEK;
 
   if (nearests.size() > 1) {
     _current_behaviour = BEHAVIOUR::FLOCK;
+  }
+
+  if (sees(doig)) {
+    _current_behaviour = BEHAVIOUR::FLEE;
+    target = doig._position;
   }
 
   if (_position.x < -0.9 && _velocity.x <= 0) {
@@ -107,6 +118,18 @@ const glm::vec2 Boid::update_behaviour(std::vector<Boid *> nearests) {
   }
 
   return target;
+}
+
+void Boid::check_success(glm::vec2 position_of_success) {
+  auto distance = glm::length(position_of_success - _position);
+  if (distance < 0.1f) {
+    is_muffin_time = true;
+  }
+  if (_position.x < -1.f || _position.x > 1.f) {
+    if (_position.y < -1.f || _position.y > 1.f) {
+      is_muffin_time = true;
+    }
+  }
 }
 
 void Boid::render(p6::Context &ctx, float &radius) {
