@@ -40,6 +40,7 @@ public:
   void seek(const glm::vec2 &target);
   void flee(const glm::vec2 &target);
   void flock(const std::vector<Boid *> &nearest, const float &dT);
+  void charge(const glm::vec2 &target);
 
   bool sees(const Boid &boid) const;
   bool sees(const Doig &doig) const;

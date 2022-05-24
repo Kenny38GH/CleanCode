@@ -9,7 +9,12 @@
 #include <vector>
 #define RAND_MAX 2147483647
 
-inline float primary_rand() { return (float)rand() / (float)RAND_MAX; }
+inline float primary_rand() {
+  std::random_device rd;
+  std::mt19937 gen(rd());
+  std::uniform_real_distribution<> dis(0.0, 1.0);
+  return (dis(gen));
+}
 
 inline int heads_or_tails() {
   srand((unsigned)time(NULL));

@@ -1,5 +1,6 @@
 #include "../lib/Boid.hpp"
 #include "../lib/Doig.hpp"
+#include "../lib/random.hpp"
 
 void Boid::seek(const glm::vec2 &target) {
   glm::vec2 desired = target - _position;
@@ -35,6 +36,8 @@ void Boid::flock(const std::vector<Boid *> &nearest, const float &dT) {
 
   seek(_position + total_velocity * dT);
 }
+
+void Boid::charge(const glm::vec2 &target) { _velocity += target - _position; }
 
 bool Boid::sees(const Boid &boid) const {
   if (&boid != this) {
@@ -91,11 +94,13 @@ const glm::vec2 Boid::update_behaviour(std::vector<Boid *> nearests,
   if (sees(doig)) {
     _current_behaviour = BEHAVIOUR::FLEE;
     target = doig._position;
+    if (bernoulli(0.99)) {
+      charge(doig._position);
+    }
   }
 
   if (_position.x < -0.9 && _velocity.x <= 0) {
     _current_behaviour = BEHAVIOUR::FLEE;
-
     target.x -= glm::abs(_position.x);
   }
 
