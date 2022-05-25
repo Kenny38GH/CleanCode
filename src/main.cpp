@@ -20,6 +20,7 @@ int main() {
   float ImGuiWidth = 500;
   float ImGuiHight = 200;
   int nb_moutmout = 0;
+  float timeofmylife = 0.f;
   bool mode_choosen = false;
   glm::vec2 target_dog = glm::vec2(0);
   glm::vec2 enclos = glm::vec2(primary_rand() * heads_or_tails(),
@@ -27,6 +28,7 @@ int main() {
 
   int it_is_time_to_say_goodbye = geo_sequence(0.99f);
   bool game_has_been_played = false;
+  bool time_is_freezed = false;
 
   ctx.imgui = [&]() {
     // Show a simple window
@@ -84,7 +86,6 @@ int main() {
       it_is_time_to_say_goodbye = 60000;
       mode_choosen = true;
     }
-    ImGui::InputInt("Nombre de moutmouts", &nb_moutmout);
     ImGui::InputInt("So Long?", &it_is_time_to_say_goodbye);
     ImGui::SliderFloat("Taille des moutons", &radius, 0.f, 1.f);
     ImGui::SliderFloat("Vitesse MAXIMALE", &max_speed, 0.1f, 0.3f);
@@ -92,6 +93,7 @@ int main() {
       if (ctx.is_paused()) {
         ctx.resume();
       }
+      time_is_freezed = false;
       ctx.mouse_pressed = [&](p6::MouseButton) {
         // flock.add_boid(ctx.mouse(), max_speed);
         target_dog = glm::vec2(ctx.mouse());
@@ -114,6 +116,15 @@ int main() {
         display_enclos(ctx, enclos);
 
         flock.render(ctx, radius);
+        ctx.fill = p6::NamedColor::White;
+        ctx.text_size = 0.04f;
+        std::u16string moutmout_restant = to_u16string(nb_moutmout);
+        auto topleftcorner = p6::TopLeftCorner(glm::vec2(-0.9f, 0.9f));
+        ctx.text(moutmout_restant, topleftcorner);
+        topleftcorner = p6::TopLeftCorner(glm::vec2(-0.75f, 0.88f));
+        ctx.text_size = 0.03f;
+        ctx.text(u"moutmouts", topleftcorner);
+
         game_has_been_played = true;
 
         // CHANGE LA PLACE DE L'ENCLOS TT LES X SECONDES
@@ -172,6 +183,11 @@ int main() {
 
     if (nb_moutmout == 0 && game_has_been_played == true &&
         mode_choosen == true) {
+
+      if (time_is_freezed == false) {
+        timeofmylife = ctx.time();
+        time_is_freezed = true;
+      }
       target_dog = glm::vec2(0);
       ctx.update = [&]() {
         x = ctx.mouse().x;
@@ -192,7 +208,12 @@ int main() {
         auto topleftcorner = p6::TopLeftCorner(glm::vec2(-0.9f, 0.1f));
         ctx.text(u"BRAVO PLUS DE MOUTMOUT", topleftcorner);
         topleftcorner = p6::TopLeftCorner(glm::vec2(-0.9f, -0.1f));
-        ctx.text(u"RELANCE UNE PARTIE !", topleftcorner);
+        ctx.text(u"DANS L'ENCLOS EN :", topleftcorner);
+        std::u16string time_score = to_u16string(int(timeofmylife / 10.f));
+        topleftcorner = p6::TopLeftCorner(glm::vec2(-0.9f, -0.2f));
+        ctx.text(time_score, topleftcorner);
+        topleftcorner = p6::TopLeftCorner(glm::vec2(-0.9f, -0.3f));
+        ctx.text(u"SECONDES", topleftcorner);
       };
     }
 

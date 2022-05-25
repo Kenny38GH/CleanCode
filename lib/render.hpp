@@ -11,3 +11,8 @@ void display_doggo(p6::Context &ctx, glm::vec2 &position, glm::vec2 &velocity,
 void display_grass(p6::Context &ctx);
 void display_border(p6::Context &ctx);
 void display_enclos(p6::Context &ctx, glm::vec2 enclos);
+
+template <typename T> std::u16string to_u16string(const T &x) {
+  auto tmp = std::to_wstring(x);
+  return std::u16string{tmp.begin(), tmp.end()};
+}

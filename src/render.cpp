@@ -68,7 +68,7 @@ void display_border(p6::Context &ctx) {
   ctx.use_stroke = true;
   ctx.stroke = {0.f, 0.f, 0.f};
   auto center = p6::Center(glm::vec2(0, 0));
-  ctx.square(center, p6::Radius{0.95f});
+  ctx.square(center, p6::Radius{0.98f});
 }
 
 void display_enclos(p6::Context &ctx, glm::vec2 enclos) {
