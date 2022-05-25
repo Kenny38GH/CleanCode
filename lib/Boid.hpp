@@ -58,4 +58,5 @@ public:
                                    const Doig &doig);
   void check_success(glm::vec2 _position_of_success);
   void render(p6::Context &ctx, float &radius);
+  void charge(const glm::vec2 &target);
 };

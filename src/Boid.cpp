@@ -81,6 +81,10 @@ void Boid::update(const float &dT, const std::vector<Boid *> &nearests,
   check_success(position_of_success);
 }
 
+void Boid::charge(const glm::vec2 &target) {
+  _velocity += (target - _position) * glm::vec2(0.001f);
+}
+
 const glm::vec2 Boid::update_behaviour(std::vector<Boid *> nearests,
                                        const Doig &doig) {
 
@@ -94,6 +98,9 @@ const glm::vec2 Boid::update_behaviour(std::vector<Boid *> nearests,
   if (sees(doig)) {
     _current_behaviour = BEHAVIOUR::FLEE;
     target = doig._position;
+    if (bernoulli(0.9999)) {
+      charge(doig._position);
+    }
   }
 
   if (_position.x < -0.9 && _velocity.x <= 0) {
